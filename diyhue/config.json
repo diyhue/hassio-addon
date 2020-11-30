@@ -1,9 +1,10 @@
 {
 	"name": "DiyHue",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"slug": "diyhue",
 	"description": "Fully configurable diyHue hue emulator.",
 	"webui": "http://[HOST]:[PORT:88]",
+	"panel_icon": "mdi:home-lightbulb",
 	"startup": "application",
 	"arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
 	"ports": {
@@ -12,6 +13,13 @@
 		"1900/udp": 1901,
 		"1982/udp": 1982,
 		"2100/udp": 2100
+	},
+	"ports_description": {
+		"80/tcp": "Hue API",
+		"443/tcp": "Hue API SSL",
+		"1900/udp": "ssdp discover",
+		"1982/udp": "Yeelight detection",
+		"2100/udp": "Hue Entertainment"
 	},
 	"boot": "auto",
 	"auth_api": true,
