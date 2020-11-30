@@ -1,0 +1,32 @@
+{
+	"name": "DiyHue",
+	"version": "1.0.2",
+	"slug": "diyhue",
+	"description": "Fully configurable diyHue hue emulator.",
+	"webui": "http://[HOST]:[PORT:88]",
+	"startup": "application",
+	"arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+	"ports": {
+		"80/tcp": 88,
+		"443/tcp": 448,
+		"1900/udp": 1901,
+		"1982/udp": 1982,
+		"2100/udp": 2100
+	},
+	"boot": "auto",
+	"auth_api": true,
+	"hassio_api": true,
+	"hassio_role": "default",
+	"auto_uart": true,
+	"map": ["config:rw", "share:rw"],
+	"options": {
+		"config_path": "/config/diyhue",
+		"mac": "XX:XX:XX:XX:XX",
+		"debug": false
+	},
+	"schema": {
+		"config_path": "str",
+		"mac": "str",
+		"debug": "bool"
+	}
+}
