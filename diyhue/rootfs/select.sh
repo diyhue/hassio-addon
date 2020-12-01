@@ -19,5 +19,11 @@ mv binaries/coap-client-$SELECTED ./coap-client-linux
 chmod a+x ./entertain-srv
 chmod a+x ./coap-client-linux
 
+echo "DEBUG OUTPUT:"
+ldd binaries/entertainment-aarch64
+echo "DEBUG OUTPUT STOP"
+md5sum binaries/entertainment-aarch64
+echo "END OF TEST"
+
 # echo "Files in out folder"
 ls -la ./
