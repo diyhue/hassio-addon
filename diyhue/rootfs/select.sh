@@ -11,13 +11,13 @@ case "$BUILD_ARCH" in
     *) SELECTED="unsupported" ;;
 esac
 
-# echo "Got file suffix: $SELECTED"
+echo "Got file suffix: $SELECTED"
 mv binaries/entertainment-$SELECTED ./entertain-srv
 mv binaries/coap-client-$SELECTED ./coap-client-linux
 
 # Fix permissions vor hue Entertain
-chmod +x ./entertain-srv
-chmod +x ./coap-client-linux
+chmod a+x ./entertain-srv
+chmod a+x ./coap-client-linux
 
 # echo "Files in out folder"
-# ls -la ./out/
+ls -la ./
