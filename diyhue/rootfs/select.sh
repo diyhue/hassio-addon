@@ -12,18 +12,18 @@ case "$BUILD_ARCH" in
 esac
 
 echo "Got file suffix: $SELECTED"
-mv binaries/entertainment-$SELECTED ./entertain-srv
+mv ./ssl_server2_diyhue ./entertain-srv
 mv binaries/coap-client-$SELECTED ./coap-client-linux
 
 # Fix permissions vor hue Entertain
 chmod a+x ./entertain-srv
 chmod a+x ./coap-client-linux
 
-echo "DEBUG OUTPUT:"
-ldd binaries/entertainment-aarch64
-echo "DEBUG OUTPUT STOP"
-md5sum binaries/entertainment-aarch64
-echo "END OF TEST"
+# echo "DEBUG OUTPUT:"
+# ldd binaries/entertainment-aarch64
+# echo "DEBUG OUTPUT STOP"
+# md5sum binaries/entertainment-aarch64
+# echo "END OF TEST"
 
 # echo "Files in out folder"
 ls -la ./
