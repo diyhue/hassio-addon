@@ -20,15 +20,16 @@ gcc -I./include ssl_server2_diyhue.c -o ../entertain-srv -L./library -lmbedtls -
 cd ..
 
 rm -f 1ab9b5714852c6810c0a0bfd8c3b5c60a9a15482.zip
-rm-f mbedtls-1ab9b5714852c6810c0a0bfd8c3b5c60a9a15482
+rm -f mbedtls-1ab9b5714852c6810c0a0bfd8c3b5c60a9a15482
 
 #echo "Got file suffix: $SELECTED"
 #mv ./ssl_server2_diyhue ./entertain-srv
 mv binaries/coap-client-$SELECTED ./coap-client-linux
 
 # Fix permissions vor hue Entertain
-chmod a+x ./entertain-srv
-chmod a+x ./coap-client-linux
+chmod a+rwx ./entertain-srv
+chmod a+rwx ./coap-client-linux
+
 
 # echo "DEBUG OUTPUT:"
 # ldd binaries/entertainment-aarch64
