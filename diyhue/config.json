@@ -1,6 +1,6 @@
 {
 	"name": "DiyHue",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"slug": "diyhue",
 	"description": "Fully configurable diyHue hue emulator.",
 	"webui": "http://[HOST]:[PORT:88]",

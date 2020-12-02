@@ -15,7 +15,7 @@ ENV DIYHUE_VERSION=master
 ENV ARCHIVE=diyhue
 
 # Download diyHue and extract
-RUN apk add --update --no-cache curl jq nodejs npm socat python2 make gcc g++ linux-headers udev git python2 \
+RUN apk add --update --no-cache curl jq nodejs npm socat python2 make gcc g++ linux-headers udev git python2 build-base \
 	&& mkdir $ARCHIVE \
 	&& mkdir config \
 	&& curl -J -L -o $ARCHIVE.tar.gz "https://github.com/diyhue/diyHue/archive/2.1.tar.gz" \
