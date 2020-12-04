@@ -19,16 +19,15 @@ make no_test
 gcc -I./include ssl_server2_diyhue.c -o ../entertain-srv -L./library -lmbedtls -lmbedx509 -lmbedcrypto
 cd ..
 
-rm -f 1ab9b5714852c6810c0a0bfd8c3b5c60a9a15482.zip
-rm -f mbedtls-1ab9b5714852c6810c0a0bfd8c3b5c60a9a15482
+rm -rf 1ab9b5714852c6810c0a0bfd8c3b5c60a9a15482.zip
+rm -rf mbedtls-1ab9b5714852c6810c0a0bfd8c3b5c60a9a15482
 
 #echo "Got file suffix: $SELECTED"
-#mv ./ssl_server2_diyhue ./entertain-srv
 mv binaries/coap-client-$SELECTED ./coap-client-linux
 
 # Fix permissions vor hue Entertain
-chmod a+rwx ./entertain-srv
-chmod a+rwx ./coap-client-linux
+chmod +x ./entertain-srv
+chmod +x ./coap-client-linux
 
 
 # echo "DEBUG OUTPUT:"
@@ -38,4 +37,4 @@ chmod a+rwx ./coap-client-linux
 # echo "END OF TEST"
 
 # echo "Files in out folder"
-ls -la ./
+ls -la
