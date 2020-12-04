@@ -18,7 +18,7 @@ ENV ARCHIVE=diyhue
 RUN apk add --update --no-cache curl jq nodejs npm socat python2 make gcc g++ linux-headers udev git python2 alpine-sdk build-base \
 	&& mkdir $ARCHIVE \
 	&& mkdir config \
-	&& curl -J -L -o $ARCHIVE.tar.gz "https://github.com/diyhue/diyHue/archive/2.1.tar.gz" \
+	&& curl -J -L -o $ARCHIVE.tar.gz "https://github.com/diyhue/diyHue/archive/master-refactor.tar.gz" \
 	&& tar xzvf $ARCHIVE.tar.gz --strip-components=1 -C $ARCHIVE \
 	&& rm -rf $ARCHIVE.tar.gz
 
