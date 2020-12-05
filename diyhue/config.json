@@ -3,7 +3,7 @@
 	"version": "1.0.10",
 	"slug": "diyhue",
 	"description": "Fully configurable diyHue hue emulator.",
-	"webui": "http://[HOST]:[PORT:88]",
+	"webui": "http://[HOST]:[PORT:80]",
 	"panel_icon": "mdi:home-lightbulb",
 	"startup": "application",
 	"arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
