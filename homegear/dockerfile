@@ -1,5 +1,6 @@
 FROM debian:buster-slim
-LABEL maintainer="max.bec92@gmail.com"
+
+# Installation routine
 RUN apt-get update && apt-get -y install apt-transport-https wget ca-certificates apt-utils gnupg libzip4 libavahi-client3 libavahi-client-dev insserv
 RUN apt-get install nano
 RUN \
@@ -22,3 +23,28 @@ RUN chmod +x /start.sh
 ENTRYPOINT ["/bin/bash", "-c", "/start.sh"]
 
 EXPOSE 2001 2002 2003
+
+# Build arguments
+ARG BUILD_DATE
+ARG BUILD_REF
+ARG BUILD_VERSION
+
+# Labels
+LABEL \
+    io.hass.name="Homegear" \
+    io.hass.description="Fully configurable homegear container." \
+    io.hass.arch="${BUILD_ARCH}" \
+    io.hass.type="addon" \
+    io.hass.version=${BUILD_VERSION} \
+    maintainer="Max Beckenbauer <max.bec92@gmail.com>" \
+    org.opencontainers.image.title="diyHue" \
+    org.opencontainers.image.description="Fully configurable homegear container." \
+    org.opencontainers.image.vendor="Max Beckenbauer" \
+    org.opencontainers.image.authors="Max Beckenbauer <max.bec92@gmail.com>" \
+    org.opencontainers.image.licenses="MIT" \
+    org.opencontainers.image.url="" \
+    org.opencontainers.image.source="" \
+    org.opencontainers.image.documentation="" \
+    org.opencontainers.image.created=${BUILD_DATE} \
+    org.opencontainers.image.revision=${BUILD_REF} \
+    org.opencontainers.image.version=${BUILD_VERSION}
