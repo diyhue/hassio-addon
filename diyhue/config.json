@@ -1,6 +1,6 @@
 {
 	"name": "DiyHue",
-	"version": "1.0.11",
+	"version": "1.0.12",
 	"slug": "diyhue",
 	"description": "Fully configurable diyHue hue emulator.",
 	"webui": "http://[HOST]:[PORT:80]",
@@ -31,11 +31,13 @@
 	"options": {
 		"config_path": "/config/diyhue",
 		"mac": "XX:XX:XX:XX:XX",
-		"debug": false
+		"debug": false,
+		"deconz_ip": "192.168.0.0"
 	},
 	"schema": {
 		"config_path": "str",
 		"mac": "str",
-		"debug": "bool"
+		"debug": "bool",
+		"deconz_ip": "str"
 	}
 }
