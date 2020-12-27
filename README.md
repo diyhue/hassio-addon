@@ -7,9 +7,8 @@
 
 ## About
 
-diyHue provides a Ecosystem for several Smart Home Solutions, eliminating the need for vendor specific Bridges and Hardware. Written in Python and Open Source, you are now able to import and control all your Lights and Sensors into one System.
-
-Lightweight and resource friendly, to run on small devices like the RPi .... 24/7
+diyHue provides a Ecosystem for several Smart Home Solutions, eliminating the need for vendor specific Bridges and Hardware. Written in Python and Open Source, you are now able to import and control all your Lights and Sensors into one System. Lightweight and resource friendly, to run on small
+devices like the RPi .... 24/7
 
 The Best part? No Cloud connection by Design!
 
