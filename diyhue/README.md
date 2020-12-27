@@ -8,6 +8,11 @@ This project emulates a Philips Hue Bridge that is able to control ZigBee lights
 It is written in Python and will run on all small devices such as the Raspberry Pi. Arduino sketches are provided for the Hue Dimmer Switch, Hue Tap Switch and Hue Motion Sensor. Lights are two-way synchronized so any change made from original Philips/Trådfri sensors and switches will also be
 applied to the bridge emulator.
 
+If you've found the extension helpful or useful, then please consider throwing a coffee my way to help support my work. As i am a student and would like to invest more time and effort in this project this would really help me.
+
+-    [Ko-Fi Donation to MaxBec](https://ko-fi.com/C0C01XTXB)
+-    [PayPal Donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=58GE7PE2EAQAY&source=url)
+
 ![diyHue ecosystem](https://raw.githubusercontent.com/diyhue/diyhue.github.io/master/assets/images/hue-map.png)
 
 ## Getting Started
