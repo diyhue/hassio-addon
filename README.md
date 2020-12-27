@@ -17,7 +17,7 @@ Enjoy your diyHue enlighted Home.
 <!--
 This project emulates a Philips Hue Bridge that is able to control ZigBee lights (using Raspbee module, original Hue Bridge or IKEA Trådfri Gateway), Mi-Light bulbs (using MiLight Hub), Neopixel strips (WS2812B and SK6812) and any cheap ESP8266 based bulb by replacing the firmware with a custom one. It is written in Python and will run on all small devices such as the Raspberry Pi. Arduino sketches are provided for the Hue Dimmer Switch, Hue Tap Switch and Hue Motion Sensor. Lights are two-way synchronized so any change made from original Philips/Trådfri sensors and switches will also be applied to the bridge emulator. -->
 
-![diyHue ecosystem](https://raw.githubusercontent.com/diyhue/diyhue.github.io/master/assets/images/hue-map.png)
+![diyHue ecosystem][img-ecosystem]
 
 ## Installation
 
@@ -36,7 +36,7 @@ The repository includes two add-ons:
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
-All notable changes to this project will be documented in the [CHANGELOG.md](diyHue/CHANGELOG.md) file.
+All notable changes to this project will be documented in the [CHANGELOG.md][changelog] file.
 
 Version for releases is based on [diyHue](https://github.com/diyhue/diyHue) format: `X.Y.Z`.
 
@@ -124,3 +124,6 @@ Hue living color light project for 3D printing: [Thingiverse 2773413](https://ww
 ## License
 
 [![license](https://img.shields.io/badge/license-GPLv3%2FApache%202.0%2FCC%20BY--SA%204.0-blue.svg)](https://github.com/diyhue/diyHue/blob/master/LICENSE.md)
+
+[changelog]: https://github.com/MaxBec/hassio-diyHue/blob/master/diyhue/CHANGELOG.md
+[img-ecosystem]: https://raw.githubusercontent.com/diyhue/diyhue.github.io/master/assets/images/hue-map.png
