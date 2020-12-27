@@ -15,7 +15,7 @@ ENV DIYHUE_VERSION=master
 ENV WORKING_DIR=/opt/hue-emulator
 
 # Create the needed folders
-RUN mkdir diyhue config ${WORKING_DIR}
+RUN mkdir diyhue config/diyhue ${WORKING_DIR}
 
 # Install all needed dependencies
 RUN apk add -q -u python3 openssl nmap psmisc iproute2 alpine-sdk build-base
@@ -46,7 +46,7 @@ RUN chmod +x ./select.sh ./genCert.sh && chmod a+x ./run.sh
 RUN ./select.sh
 
 # Config symlink
-RUN ln -s /config ./export
+RUN ln -s /config/diyhue ./export
 
 # Build arguments
 ARG BUILD_DATE
