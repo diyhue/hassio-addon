@@ -1,8 +1,8 @@
 {
-	"name": "DiyHue",
-	"version": "1.0.12",
+	"name": "diyHue",
+	"version": "1.1.0",
 	"slug": "diyhue",
-	"description": "Fully configurable diyHue hue emulator.",
+	"description": "Fully configurable Philips Hue emulator.",
 	"webui": "http://[HOST]:[PORT:80]",
 	"panel_icon": "mdi:home-lightbulb",
 	"startup": "application",
@@ -25,6 +25,7 @@
 	"auth_api": true,
 	"hassio_api": true,
 	"hassio_role": "default",
+	"host_network": true,
 	"auto_uart": true,
 	"map": ["config:rw", "share:rw"],
 	"options": {

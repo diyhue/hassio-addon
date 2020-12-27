@@ -12,31 +12,38 @@ ARG BUILD_ARCH=aarch64
 # Other settings
 ENV LANG C.UTF-8
 ENV DIYHUE_VERSION=master
-ENV ARCHIVE=diyhue
+ENV WORKING_DIR=/opt/hue-emulator
 
-# Download diyHue and extract
-RUN apk add --update --no-cache curl jq nodejs npm socat python2 make gcc g++ linux-headers udev git python2 alpine-sdk build-base \
-	&& mkdir $ARCHIVE \
-	&& mkdir config \
-	&& curl -J -L -o $ARCHIVE.tar.gz "https://github.com/diyhue/diyHue/archive/master-refactor.tar.gz" \
-	&& tar xzvf $ARCHIVE.tar.gz --strip-components=1 -C $ARCHIVE \
-	&& rm -rf $ARCHIVE.tar.gz
+# Create the needed folders
+RUN mkdir diyhue config ${WORKING_DIR}
+
+# Install all needed dependencies
+RUN apk add -q -u python3 openssl nmap psmisc iproute2 alpine-sdk build-base
+
+# Download diyhue and untar it
+RUN curl -J -L -o $diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/master.tar.gz" \
+	&& tar xzvf $diyhue.tar.gz --strip-components=1 -C diyhue \
+	&& rm -rf $diyhue.tar.gz \
+	&& pip3 install -r /diyhue/requirements.txt --no-cache-dir
 
 # Set working directory to the Archive folder
-WORKDIR ${ARCHIVE}
+WORKDIR /opt/hue-emulator
 
-COPY rootfs run.sh ./
+# Install diyHue
+RUN mv /diyhue/BridgeEmulator/web-ui/ 											./web-ui/
+RUN mv /diyhue/BridgeEmulator/functions/ 										./functions/
+RUN mv /diyhue/BridgeEmulator/protocols/ 										./protocols/
+RUN mv /diyhue/BridgeEmulator/HueEmulator3.py /diyhue/BridgeEmulator/debug/clip.html 	./
+RUN mv /diyhue/BridgeEmulator/genCert.sh /diyhue/BridgeEmulator/openssl.conf 			./
 
-RUN chmod +x ./select.sh \
-	&& chmod a+x ./run.sh \
-    	&& mkdir ./out \
-    	&& ./select.sh
+# Copy additional local build files
+COPY rootfs ./
 
-RUN apk add --update --no-cache openssl nmap psmisc iproute2 \
-    && pip3 install --no-cache-dir -r requirements.txt \
-    && mv src/core/* .
+# Modify user rights of additional files
+RUN chmod +x ./select.sh ./genCert.sh && chmod a+x ./run.sh
 
-RUN echo $(ls)
+# Sleect the right binaries depending on the arch
+RUN ./select.sh
 
 # Build arguments
 ARG BUILD_DATE
@@ -48,22 +55,22 @@ VOLUME ["/config"]
 
 # Labels
 LABEL \
-    io.hass.name="DiyHue" \
-    io.hass.description="Fully configurable diyHue hue emulator" \
-    io.hass.arch="${BUILD_ARCH}" \
-    io.hass.type="addon" \
-    io.hass.version=${BUILD_VERSION} \
-    maintainer="Max Beckenbauer <max.bec92@gmail.com>" \
-    org.opencontainers.image.title="diyHue" \
-    org.opencontainers.image.description="Fully configurable diyHue hue emulator" \
-    org.opencontainers.image.vendor="Max Beckenbauer" \
-    org.opencontainers.image.authors="Max Beckenbauer <max.bec92@gmail.com>" \
-    org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.url="" \
-    org.opencontainers.image.source="" \
-    org.opencontainers.image.documentation="" \
-    org.opencontainers.image.created=${BUILD_DATE} \
-    org.opencontainers.image.revision=${BUILD_REF} \
-    org.opencontainers.image.version=${BUILD_VERSION}
+	io.hass.name="diyHue" \
+	io.hass.description="Fully configurable Philips Hue emulator" \
+	io.hass.arch="${BUILD_ARCH}" \
+	io.hass.type="addon" \
+	io.hass.version=${BUILD_VERSION} \
+	maintainer="Max Beckenbauer <max.bec92@gmail.com>" \
+	org.opencontainers.image.title="diyHue" \
+	org.opencontainers.image.description="Fully configurable Philips Hue emulator" \
+	org.opencontainers.image.vendor="Max Beckenbauer" \
+	org.opencontainers.image.authors="Max Beckenbauer <max.bec92@gmail.com>" \
+	org.opencontainers.image.licenses="MIT" \
+	org.opencontainers.image.url="" \
+	org.opencontainers.image.source="" \
+	org.opencontainers.image.documentation="" \
+	org.opencontainers.image.created=${BUILD_DATE} \
+	org.opencontainers.image.revision=${BUILD_REF} \
+	org.opencontainers.image.version=${BUILD_VERSION}
 
 CMD [ "./run.sh" ]
