@@ -46,7 +46,8 @@ RUN chmod +x ./select.sh ./genCert.sh && chmod a+x ./run.sh
 RUN ./select.sh
 
 # Config symlink
-RUN ln -s /config/diyhue ./export
+RUN mkdir export \
+	&& ln -s /config/diyhue ./export
 
 # Build arguments
 ARG BUILD_DATE
