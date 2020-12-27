@@ -2,7 +2,7 @@
 	"name": "diyHue",
 	"version": "1.1.4",
 	"slug": "diyhue",
-	"description": "This project emulates a Philips Hue Bridge that is able to control ZigBee lights (using Raspbee module, original Hue Bridge or IKEA Trådfri Gateway), Mi-Light bulbs (using MiLight Hub), Neopixel strips (WS2812B and SK6812) and any cheap ESP8266 based bulb",
+	"description": "Philips Hue Bridge Emulator",
 	"webui": "http://[HOST]:[PORT:80]",
 	"panel_icon": "mdi:home-lightbulb",
 	"startup": "application",
