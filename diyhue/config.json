@@ -1,6 +1,6 @@
 {
 	"name": "diyHue",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"slug": "diyhue",
 	"description": "Fully configurable Philips Hue emulator.",
 	"webui": "http://[HOST]:[PORT:80]",
