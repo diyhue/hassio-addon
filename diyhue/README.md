@@ -11,7 +11,7 @@ applied to the bridge emulator.
 If you've found the extension helpful or useful, then please consider throwing a coffee my way to help support my work. As i am a student and would like to invest more time and effort in this project this would really help me.
 
 -    [Ko-Fi Donation to MaxBec](https://ko-fi.com/C0C01XTXB)
--    [PayPal Donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=58GE7PE2EAQAY&source=url)
+-    [PayPal Donation](https://www.paypal.com/donate?hosted_button_id=S95PWMZ3S6WJU)
 
 ![diyHue ecosystem](https://raw.githubusercontent.com/diyhue/diyhue.github.io/master/assets/images/hue-map.png)
 
