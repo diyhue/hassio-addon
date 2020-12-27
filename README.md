@@ -31,7 +31,7 @@ Add the repository URL under **Supervisor → Add-on store → ⋮ → Manage ad
 The repository includes two add-ons:
 
 -    **diyHue** is a stable release that tracks the released versions of diyHue.
--    **diyHue-beta** tracks the `dev` branch of diyHue, so you can install the edge version if there are features or fixes in the dev branch that are not yet released.
+-    **diyHue-beta** tracks the `dev` branch of diyHue, so you can install the edge version if there are features or fixes in the dev branch that are not yet released. _NOT AVAILABLE YET_
 
 ## Changelog
 
@@ -124,4 +124,4 @@ Hue living color light project for 3D printing: [Thingiverse 2773413](https://ww
 
 ## License
 
-[![licens
+[![license](https://img.shields.io/badge/license-GPLv3%2FApache%202.0%2FCC%20BY--SA%204.0-blue.svg)](https://github.com/diyhue/diyHue/blob/master/LICENSE.md)
