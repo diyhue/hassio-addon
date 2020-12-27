@@ -45,6 +45,9 @@ RUN chmod +x ./select.sh ./genCert.sh && chmod a+x ./run.sh
 # Sleect the right binaries depending on the arch
 RUN ./select.sh
 
+# Config symlink
+RUN ln -s /config ./export
+
 # Build arguments
 ARG BUILD_DATE
 ARG BUILD_REF
