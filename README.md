@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://diyhue.org/cdn/img/diyHue-Logo.png">
+<img src="https://github.com/MaxBec/hassio-diyHue/blob/master/diyhue/logo.png">
 <h1>Home Assistant Add-on: diyHue</h1>
 <br>
 <p>Run <a href="https://diyhue.org">diyHue</a> as a Home Assistant Add-on</p>
