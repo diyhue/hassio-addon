@@ -10,4 +10,11 @@ if bashio::config.has_value 'deconz_ip'; then
     export DECONZ="$(bashio::config 'deconz_ip')"
 fi
 
+if [[ -d $CONFIG_PATH ]]; then
+    echo "$CONFIG_PATH is exists."
+else
+    mkdir -p $CONFIG_PATH
+    echo "$CONFIG_PATH created."
+fi
+
 python3 -u /opt/hue-emulator/HueEmulator3.py --docker
