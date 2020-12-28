@@ -11,7 +11,7 @@ if bashio::config.has_value 'deconz_ip'; then
 fi
 
 if [[ -d $CONFIG_PATH ]]; then
-    echo "$CONFIG_PATH is exists."
+    echo "$CONFIG_PATH exists."
 else
     mkdir -p $CONFIG_PATH
     echo "$CONFIG_PATH created."
