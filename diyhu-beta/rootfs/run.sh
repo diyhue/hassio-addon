@@ -6,7 +6,7 @@ export MAC="$(bashio::config 'mac')"
 export CONFIG_PATH="$(bashio::config 'config_path')"
 export DEBUG="$(bashio::config 'debug')"
 
-if bashio::config.has_value 'deconz_ip'; then
+if [[ ! -z "$(bashio::config 'deconz_ip')" ]]; then
     export DECONZ="$(bashio::config 'deconz_ip')"
 fi
 
