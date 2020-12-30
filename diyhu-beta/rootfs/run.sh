@@ -17,4 +17,6 @@ else
     echo "$CONFIG_PATH created."
 fi
 
+echo "Your Architecture is $BUILD_ARCHI"
+
 python3 -u /opt/hue-emulator/HueEmulator3.py --docker

@@ -4,6 +4,7 @@
 # Hassio: armhf, armv7, aarch64, amd64, i386
 
 case "$BUILD_ARCH" in
+ "i386") SELECTED="i686" ;;
  "amd64") SELECTED="x86_64" ;;
  "armv7") SELECTED="arm" ;;
  "armhf") SELECTED="arm" ;;

@@ -8,6 +8,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Set the build architecture and convert it from hassio to diyhue style
 # armhf, armv7, aarch64, amd64, i386
 ARG BUILD_ARCH=aarch64
+ENV BUILD_ARCHI = BUILD_ARCH
 
 # Other settings
 ENV LANG C.UTF-8
