@@ -26,6 +26,7 @@ Example add-on configuration:
 config_path: /config/diyhue
 mac: "XX:XX:XX:XX:XX:XX"
 debug: true
+no-serve-https: false
 deconz_ip: 192.168.0.0
 ```
 
@@ -44,6 +45,12 @@ The mac-address of your device.
 ### Option: `debug`
 
 If you turn the debug option to true you will get extended logs in the output section of the add-on.
+
+Valid values: `false`, `true`.
+
+### Option: `no-serve-https`
+
+You have to set this value to true if you are running hassio under https. Hassio doesn't allow the usage of SSL on the websocket at the moment. So you have to force diyhue to not use https.
 
 Valid values: `false`, `true`.
 
