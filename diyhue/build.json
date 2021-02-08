@@ -5,5 +5,7 @@
 		"armv7": "hassioaddons/base-python-armv7:5.3.4",
 		"i386": "hassioaddons/base-python-i386:5.3.4"
 	},
-	"args": {}
+	"args": {
+		"network": "host"
+	}
 }
