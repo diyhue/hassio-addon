@@ -26,7 +26,7 @@
 	"hassio_api": true,
 	"hassio_role": "default",
 	"host_network": true,
-	"auto_uart": true,
+	"uart": true,
 	"map": ["config:rw", "share:rw"],
 	"options": {
 		"config_path": "/config/diyhue",
