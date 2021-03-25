@@ -1,8 +1,8 @@
 {
-	"name": "diyHue",
+	"name": "diyHue FLASK",
 	"version": "1.4.0",
-	"slug": "diyhue-beta",
-	"description": "Philips Hue Bridge Emulator",
+	"slug": "diyhue-beta-flask",
+	"description": "Philips Hue Bridge Emulator FLASK",
 	"webui": "http://[HOST]:[PORT:80]",
 	"panel_icon": "mdi:home-lightbulb",
 	"startup": "application",
