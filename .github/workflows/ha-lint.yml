@@ -11,3 +11,7 @@ jobs:
         uses: frenck/action-addon-linter@v2.1
         with:
           path: "./diyhue"
+      - name: 🚀 Run Home Assistant Add-on Lint
+        uses: frenck/action-addon-linter@v2.1
+        with:
+          path: "./diyhue-flask"
