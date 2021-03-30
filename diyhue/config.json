@@ -5,7 +5,6 @@
 	"description": "Philips Hue Bridge Emulator",
 	"webui": "http://[HOST]:[PORT:80]",
 	"panel_icon": "mdi:home-lightbulb",
-	"startup": "application",
 	"arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
 	"ports": {
 		"80/tcp": 80,
@@ -21,10 +20,8 @@
 		"1982/udp": "Yeelight detection",
 		"2100/udp": "Hue Entertainment"
 	},
-	"boot": "auto",
 	"auth_api": true,
 	"hassio_api": true,
-	"hassio_role": "default",
 	"host_network": true,
 	"uart": true,
 	"map": ["config:rw", "share:rw"],
