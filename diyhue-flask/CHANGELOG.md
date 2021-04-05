@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file. The format 
 ### Changed
 
 -    Deleted the host_network entry in the config.json. #16
+
+### Fixed
+- Added changes from the diyhue flask repo. web-ui is now flaskUI.
+
 ## [1.4.0 - 25.3.2021]
 
 ### Added
