@@ -22,11 +22,12 @@
     },
     "auth_api": true,
     "hassio_api": true,
+    "host_network": true,
     "uart": true,
     "map": ["config:rw", "share:rw"],
     "options": {
         "config_path": "/config/diyhue",
-        "mac": "XX:XX:XX:XX:XX",
+        "mac": "XX:XX:XX:XX:XX:XX",
         "debug": false,
         "deconz_ip": "",
         "no_serve_https": false

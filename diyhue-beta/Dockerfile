@@ -22,7 +22,7 @@ RUN mkdir diyhue config ${WORKING_DIR}
 RUN apk add -q -u python3 openssl nmap psmisc iproute2 alpine-sdk build-base
 
 # Download diyhue and untar it
-RUN curl -J -L -o $diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/refs/heads/flask.tar.gz" \
+RUN curl -J -L -o $diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/refs/heads/beta.tar.gz" \
 	&& tar xzvf $diyhue.tar.gz --strip-components=1 -C diyhue \
 	&& rm -rf $diyhue.tar.gz \
 	&& pip3 install -r /diyhue/requirements.txt --no-cache-dir
@@ -31,11 +31,16 @@ RUN curl -J -L -o $diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/refs/
 WORKDIR /opt/hue-emulator
 
 # Install diyHue
+RUN mv /diyhue/BridgeEmulator/HueObjects/										./HueObjects/
+RUN mv /diyhue/BridgeEmulator/configManager/ 									./configManager/
 RUN mv /diyhue/BridgeEmulator/flaskUI/ 											./flaskUI/
 RUN mv /diyhue/BridgeEmulator/functions/ 										./functions/
-RUN mv /diyhue/BridgeEmulator/protocols/ 										./protocols/
-RUN mv /diyhue/BridgeEmulator/HueEmulator3.py /diyhue/BridgeEmulator/debug/clip.html 	./
-RUN mv /diyhue/BridgeEmulator/genCert.sh /diyhue/BridgeEmulator/openssl.conf 			./
+RUN mv /diyhue/BridgeEmulator/lights/ 											./lights/
+RUN mv /diyhue/BridgeEmulator/logManager/ 										./logManager/
+RUN mv /diyhue/BridgeEmulator/sensors/ 											./sensors/
+RUN mv /diyhue/BridgeEmulator/services/ 										./services/
+RUN mv /diyhue/BridgeEmulator/HueEmulator3.py 									./
+RUN mv /diyhue/BridgeEmulator/genCert.sh /diyhue/BridgeEmulator/openssl.conf 	./
 
 # Copy additional local build files
 COPY rootfs ./
