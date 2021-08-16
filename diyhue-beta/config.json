@@ -1,42 +1,42 @@
 {
-	"name": "diyHue Beta",
-	"version": "1.5.0",
-	"slug": "diyhue-beta-branch",
-	"description": "Philips Hue Bridge Emulator BETA",
-	"webui": "http://[HOST]:[PORT:80]",
-	"panel_icon": "mdi:home-lightbulb",
-	"arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
-	"ports": {
-		"80/tcp": 80,
-		"443/tcp": 443,
-		"1900/udp": 1901,
-		"1982/udp": 1982,
-		"2100/udp": 2100
-	},
-	"ports_description": {
-		"80/tcp": "Hue API",
-		"443/tcp": "Hue API SSL",
-		"1900/udp": "ssdp discover",
-		"1982/udp": "Yeelight detection",
-		"2100/udp": "Hue Entertainment"
-	},
-	"auth_api": true,
-	"hassio_api": true,
-	"host_network": true,
-	"uart": true,
-	"map": ["config:rw", "share:rw"],
-	"options": {
-		"config_path": "/config/diyhue",
-		"mac": "XX:XX:XX:XX:XX:XX",
-		"debug": false,
-		"deconz_ip": "",
-		"no_serve_https": false
-	},
-	"schema": {
-		"config_path": "str",
-		"mac": "str",
-		"debug": "bool",
-		"deconz_ip": "str",
-		"no_serve_https": "bool"
-	}
+"name": "diyHue Beta",
+"version": "1.5.0",
+"slug": "diyhue-beta-branch",
+"description": "Philips Hue Bridge Emulator BETA",
+"webui": "http://[HOST]:[PORT:80]",
+"panel_icon": "mdi:home-lightbulb",
+"arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+"ports": {
+    "80/tcp": 80,
+    "443/tcp": 443,
+    "1900/udp": 1901,
+    "1982/udp": 1982,
+    "2100/udp": 2100
+},
+"ports_description": {
+    "80/tcp": "Hue API",
+    "443/tcp": "Hue API SSL",
+    "1900/udp": "ssdp discover",
+    "1982/udp": "Yeelight detection",
+    "2100/udp": "Hue Entertainment"
+},
+"auth_api": true,
+"hassio_api": true,
+"host_network": true,
+"uart": true,
+"map": ["config:rw", "share:rw"],
+"options": {
+    "config_path": "/config/diyhue",
+    "mac": "XX:XX:XX:XX:XX:XX",
+    "debug": false,
+    "deconz_ip": "",
+    "no_serve_https": false
+},
+"schema": {
+    "config_path": "str",
+    "mac": "str",
+    "debug": "bool",
+    "deconz_ip": "str",
+    "no_serve_https": "bool"
+}
 }
