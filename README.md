@@ -33,7 +33,7 @@ Add the repository URL under **Supervisor → Add-on store → ⋮ → Manage ad
 The repository includes two add-ons:
 
 -    **diyHue** is a stable release that tracks the released versions of diyHue.
--    **diyHue-beta** tracks the `dev` branch of diyHue, so you can install the edge version if there are features or fixes in the dev branch that are not yet released. _NOT AVAILABLE YET_
+-    **diyHue-beta** tracks the `beta` branch of diyHue, so you can install the edge version if there are features or fixes in the dev branch that are not yet released.
 
 ## Changelog
 
