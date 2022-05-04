@@ -11,7 +11,13 @@ Add the repository URL under **Supervisor → Add-on store → ⋮ → Manage ad
     https://github.com/diyhue/hassio-addon
 
 
-**Before starting the Emulator, edit the Config acording to the Docs below**
+**Important** After Install & before starting the diyHue, edit the Config acording to the Docs below. If you start diyHue with the default MAC or a wrong MAC the Certificate for Linking Official Apps is generated wrong and you get a error.
+In that case:
+
+- Stop diyHue
+- delete cert.pem
+- edit mac
+- restart diyHue
 
 ## Configuration
 
