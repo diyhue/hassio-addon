@@ -13,8 +13,8 @@ At this point we would like to thank Max for his great work upon we will continu
 Max and diyhue agreed to make this Addon official.
 
 ### Changed
-Repo URL to https://github.com/diyhue/hassio-addon
-Build upon latest diyHue Master Release
+- Repo URL to https://github.com/diyhue/hassio-addon
+- Build upon latest diyHue Master Release
 
 
 ## [1.4.1 - 05.04.2021]
