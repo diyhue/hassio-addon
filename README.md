@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/MaxBec/hassio-diyHue/blob/master/diyhue/logo.png">
+<img src="https://github.com/diyhue/hassio-addon/blob/master/images/diyhue-hassio.png">
 <h1>Home Assistant Add-on: diyHue</h1>
 <br>
 <p>Run <a href="https://diyhue.org">diyHue</a> as a Home Assistant Add-on</p>
@@ -16,9 +16,7 @@ Enjoy your diyHue enlighted Home.
 
 If you've found the Add-on helpful or useful, then please consider throwing a coffee my way to help support my work. As i am a student and would like to invest more time and effort in this project this would really help me:
 
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/C0C01XTXB)
-
-[![paypal](https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=S95PWMZ3S6WJU)
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/diyhue)
 
 ![diyHue ecosystem][img-ecosystem]
 
@@ -28,12 +26,8 @@ The installation process is pretty easy and straight forward, like for any other
 
 Add the repository URL under **Supervisor → Add-on store → ⋮ → Manage add-on repositories**:
 
-    https://github.com/MaxBec/diyHue-hassio
+    https://github.com/diyhue/hassio-addon
 
-The repository includes two add-ons:
-
--    **diyHue** is a stable release that tracks the released versions of diyHue.
--    **diyHue-beta** tracks the `beta` branch of diyHue, so you can install the edge version if there are features or fixes in the dev branch that are not yet released.
 
 ## Changelog
 
@@ -72,7 +66,7 @@ Our Board might already have your fix and answer ready. Have a look!
 
 > General Note: Please provide some Logs to make it easier for all of us. Enable Debug by manually starting diyHue with additional `--debug true` argument.
 
-## Stability
+<!--## Stability
 
 Starting in Dec. 2020 we will introduce one Master and one Dev Branch. The Master will have the most stable code.
 
@@ -80,7 +74,10 @@ If you want to tinker and experiment you can try the dev Branch. Active developm
 
 You want to get the latest features? Try the experimental Branch. Use at own Risk!
 
+-->
+
 <!-- All the lights in my house are controlled by this solution so the stability is very important to me as there is no turning back to classic illumination (all switches were replaced with Ikea Trådfri Remotes and holes covered). However, I don't use all the functions, so I'm unable to perform full tests on every change. What I do currently use is Deconz with all Trådfri devices (lights + sensors), Xiaomi Motion Sensor, native ESP8266 bulbs, ESP8266 + WS2812B strips, and Xiaomi YeeLight color bulbs. -->
+
 
 Please post on our [Slack team](https://slackinvite.squishedmooo.com/) any other device/application that you find to work with this emulator.
 
