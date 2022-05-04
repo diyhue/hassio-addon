@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+
+## [2.0.0 - 05.05.2022]
+
+Official diyHue Hassio Addon Release
+
+This addon is only compatible with the "BETA" of the initial addon Release by Max. 
+At this point we would like to thank Max for his great work upon we will continue this Addon.
+Max and diyhue agreed to make this Addon official.
+
+### Changed
+Repo URL to https://github.com/diyhue/hassio-addon
+Build upon latest diyHue Master Release
+
+
 ## [1.4.1 - 05.04.2021]
 
 ### Changed

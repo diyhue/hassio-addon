@@ -1,7 +1,6 @@
 # Home Assistant Add-on: diyHue
 
-The Home Assistant diyHue Add-on allows users to run a fully working diyHue instance right inside Home Assistant. So there is no more need for running a separate instance of diyHue on a separate device. With this Add-on you can manage all your Philips Hue lightbulbs, sensors and switches together
-with some third-party devices right from inside Home Assistant.
+The Home Assistant diyHue Add-on allows users to run a fully working diyHue instance right inside Home Assistant. With this Add-on you can manage all your Genuine Hue Lightbulbs, Sensors and Switches aswell as add third-party devices right from inside Home Assistant.
 
 ## Installation
 
@@ -9,12 +8,10 @@ The installation process is pretty easy and straight forward, like for any other
 
 Add the repository URL under **Supervisor → Add-on store → ⋮ → Manage add-on repositories**:
 
-    https://github.com/MaxBec/diyHue-hassio
+    https://github.com/diyhue/hassio-addon
 
-The repository includes two add-ons:
 
--    **diyHue** is a stable release that tracks the released versions of diyHue.
--    **diyHue-beta** tracks the `dev` branch of diyHue, so you can install the edge version if there are features or fixes in the dev branch that are not yet released. _NOT AVAILABLE YET_
+**Before starting the Emulator, edit the Config acording to the Docs below**
 
 ## Configuration
 
@@ -38,7 +35,8 @@ The `config_path` option controls the folder where your diyHue config gets store
 
 ### Option: `mac`
 
-The mac-address of your device.
+The mac-address of your interface (device) you use to connect to you network.
+**You can not fake a Mac here, since it is used for original software (APP) to authenticate the Emulated Bridge!**
 
 **Note**: You have to stick to this format `XX:XX:XX:XX:XX:XX`.
 
@@ -83,16 +81,18 @@ You have several options to get them answered:
 -    The diyHue Discord Channel [diyHue Discord](https://diyhue.discourse.group)
 -    The diyHue Slack Channel [diyHue Slack](https://join.slack.com/t/diyhue/shared_invite/enQtNzAwNDE1NDY2MzQxLTljNGMwZmE0OWRhNDIwM2FjOGM1ZTcxNjNmYjc5ZmE3MjZlNmNjMmUzYmRkZjhhOGNjOTc4NzA0MGVkYzE2NWM)
 
-You could also [open an issue here](https://github.com/MaxBec/hassio-diyHue/issues) GitHub.
+You could also [open an issue here](https://github.com/diyhue/hassio-adddon/issues) GitHub.
+
 
 ## Authors & contributors
 
 The original setup of this repository is by Max Beckenbauer.
+diyHue adopted his work and is now releasing the official addon upon his work. 
+**Thank you Max**
 
 For a full list of all authors and contributors, check credits section of the main README.md.
 
 [discord-ha]: https://discord.gg/c5DvZ4e
 [forum]: https://community.home-assistant.io
-[keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [releases]: https://github.com/diyhue/diyHue/releases
-[semver]: http://semver.org/spec/v2.0.0.htm
+

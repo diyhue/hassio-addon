@@ -20,9 +20,10 @@ RUN mkdir diyhue config ${WORKING_DIR}
 
 # Install all needed dependencies
 RUN apk add -q -u python3 openssl nmap psmisc iproute2 alpine-sdk build-base
+RUN apk add --no-cache bluez
 
 # Download diyhue and untar it
-RUN curl -J -L -o $diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/refs/heads/beta.tar.gz" \
+RUN curl -J -L -o $diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/refs/heads/master.tar.gz" \
 	&& tar xzvf $diyhue.tar.gz --strip-components=1 -C diyhue \
 	&& rm -rf $diyhue.tar.gz \
 	&& pip3 install -r /diyhue/requirements.txt --no-cache-dir
@@ -62,17 +63,17 @@ VOLUME ["/config"]
 # Labels
 LABEL \
 	io.hass.name="diyHue" \
-	io.hass.description="Fully configurable Philips Hue emulator" \
+	io.hass.description="Fully configurable diyHue Emulator" \
 	io.hass.arch="${BUILD_ARCH}" \
 	io.hass.type="addon" \
 	io.hass.version=${BUILD_VERSION} \
-	maintainer="Max Beckenbauer <max.bec92@gmail.com>" \
+	maintainer="diyHue <info@diyHue.org>" \
 	org.opencontainers.image.title="diyHue" \
-	org.opencontainers.image.description="Fully configurable Philips Hue emulator" \
-	org.opencontainers.image.vendor="Max Beckenbauer" \
-	org.opencontainers.image.authors="Max Beckenbauer <max.bec92@gmail.com>" \
+	org.opencontainers.image.description="Fully configurable diyHue Emulator" \
+	org.opencontainers.image.vendor="diyHue" \
+	org.opencontainers.image.authors="diyHue <info@diyHue.org>" \
 	org.opencontainers.image.licenses="MIT" \
-	org.opencontainers.image.url="" \
+	org.opencontainers.image.url="diyHue.org" \
 	org.opencontainers.image.source="" \
 	org.opencontainers.image.documentation="" \
 	org.opencontainers.image.created=${BUILD_DATE} \
