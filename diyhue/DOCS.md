@@ -15,7 +15,7 @@ Add the repository URL under **Supervisor → Add-on store → ⋮ → Manage ad
 In that case:
 
 - Stop diyHue
-- delete cert.pem
+- delete cert.pem in _/config/diyhue_ dir
 - edit mac
 - restart diyHue
 
