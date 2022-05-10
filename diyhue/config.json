@@ -6,6 +6,7 @@
 "webui": "http://[HOST]:[PORT:80]",
 "panel_icon": "mdi:home-lightbulb",
 "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+"ingress": true,
 "ports": {
     "80/tcp": 80,
     "443/tcp": 443,
