@@ -4,6 +4,8 @@ The Home Assistant diyHue Add-on allows users to run a fully working diyHue inst
 
 ## Installation
 
+### NOTE: Installation will take some Minutes! Be Patience =)
+
 The installation process is pretty easy and straight forward, like for any other third-party Home Assistang Add-on.
 
 Add the repository URL under **Supervisor → Add-on store → ⋮ → Manage add-on repositories**:
