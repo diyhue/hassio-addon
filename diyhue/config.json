@@ -7,6 +7,7 @@
 "panel_icon": "mdi:home-lightbulb",
 "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
 "ingress": true,
+"ingress_port": 80,
 "ports": {
     "80/tcp": 80,
     "443/tcp": 443,
