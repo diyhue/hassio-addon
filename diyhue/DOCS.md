@@ -4,6 +4,8 @@ The Home Assistant diyHue Add-on allows users to run a fully working diyHue inst
 
 ## Installation
 
+### NOTE: Installation will take some Minutes! Be Patience =)
+
 The installation process is pretty easy and straight forward, like for any other third-party Home Assistang Add-on.
 
 Add the repository URL under **Supervisor → Add-on store → ⋮ → Manage add-on repositories**:
@@ -61,6 +63,22 @@ Valid values: `false`, `true`.
 ### Option: `deconz_ip`
 
 Here you can enter the IP-Address of your Deconz instance.
+
+
+## Sidepanel Link
+
+Add the following to get a Navigation Link in the Sidepanel
+
+```yaml
+
+panel_iframe:
+  diyhue:
+    title: "diyHue"
+    icon: mdi:home-lightbulb
+    url: "http://homeassistant:80"
+    
+ ```
+ 
 
 ## Known issues and limitations
 
