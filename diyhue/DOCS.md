@@ -64,6 +64,22 @@ Valid values: `false`, `true`.
 
 Here you can enter the IP-Address of your Deconz instance.
 
+
+## Sidepanel Link
+
+Add the following to get a Navigation Link in the Sidepanel
+
+```yaml
+
+panel_iframe:
+  diyhue:
+    title: "diyHue"
+    icon: mdi:home-lightbulb
+    url: "http://homeassistant:80"
+    
+ ```
+ 
+
 ## Known issues and limitations
 
 -    No special limitations at the moment. ;)
