@@ -67,7 +67,7 @@ Here you can enter the IP-Address of your Deconz instance.
 
 ## Sidepanel Link
 
-Add the following to get a Navigation Link in the Sidepanel
+Add the following to your HA _configuration.yaml_ to get a Navigation Link in the Sidepanel
 
 ```yaml
 
