@@ -5,6 +5,10 @@ CONFIG_PATH=/data/options.json
 export MAC="$(bashio::config 'mac')"
 export CONFIG_PATH="$(bashio::config 'config_path')"
 export DEBUG="$(bashio::config 'debug')"
+export HTTP_PORT="$(bashio::config 'http_port')"
+export HTTPS_PORT="$(bashio::config 'https_port')"
+
+
 
 if [[ ! -z "$(bashio::config 'deconz_ip')" ]]; then
     export DECONZ="$(bashio::config 'deconz_ip')"
