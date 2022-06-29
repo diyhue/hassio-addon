@@ -102,6 +102,8 @@ We highly appreciate your support, making diyHue even better!
 
 ## Credits
 
+- The Addon code was originally written by Max ([@Maxbec](https://github.com/maxbec)) and has been adopted into the diyhue project officially. Thank you very much Max for your contribution!
+
 -    Ben ([@cheesemarathon](https://github.com/cheesemarathon)) All fancy github integrations
 -    [Stephan van Rooij](https://github.com/svrooij) - zigbee2mqtt integration
 -    [@avinashraja98](https://github.com/avinashraja98) - Hue Entertainment server
