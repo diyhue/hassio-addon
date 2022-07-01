@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.4 - 01.7.2022]
+
+### Update
+ - Fixed Home Assistant lights weren't detected with the correct type
+ - Fixed Home Assistant brightness didn't work
+
 
 ## [2.0.3 - 29.6.2022]
 
