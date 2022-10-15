@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. The format 
 
 
 
+
+## [2.0.7 - 15.10.2022]
+### Fix
+ - Connection to Hue APP failed on certain systems because Certificate could not be saved into missing Directory.
+
+
 ## [2.0.6 - 09.10.2022]
 ### Fix
  - Bug in MQTT fixed when using zigbee2mqtt. BRI Change now reflects Hue API behavior.
