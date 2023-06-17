@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+
+## [2.0.9 - 17.06.2023]
+### Update
+ - Emulated Hue SW Version and API Version updated
+
+### Add
+ - Elgato Protocol (Elgato Key Light)
+ - RDM002 Support added (Hue Tap Dial)
+
+### Fix
+ - HA Error (invalid LightMode)
+ - State only Battery output when not Null
+
+
+
 ## [2.0.8 - 17.03.2023]
 ### Fix
  - Hue Sync issues
