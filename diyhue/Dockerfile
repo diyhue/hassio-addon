@@ -28,6 +28,15 @@ RUN curl -J -L -o $diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/refs/
 	&& rm -rf $diyhue.tar.gz \
 	&& pip3 install -r /diyhue/requirements.txt --no-cache-dir
 
+RUN apk --no-cache add --virtual build-deps gcc git make musl-dev \
+	&& git clone https://github.com/wolfcw/libfaketime \
+	&& cd libfaketime \
+	&& make \
+	&& mv src/*.so* /lib && mv src/faketime /bin \
+	&& cd - \
+	&& rm -rf libfaketime \
+	&& apk del build-deps
+
 # Set working directory to the Archive folder
 WORKDIR /opt/hue-emulator
 
