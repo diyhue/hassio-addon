@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. The format 
 
 
 
+## [2.0.11 - 18.2.2024]
+### add
+ - Updated webUi
+
 ## [2.0.9 - 17.06.2023]
 ### Update
  - Emulated Hue SW Version and API Version updated
