@@ -55,8 +55,8 @@ RUN mv /diyhue/BridgeEmulator/logManager/ 										./logManager/
 RUN mv /diyhue/BridgeEmulator/sensors/ 											./sensors/
 RUN mv /diyhue/BridgeEmulator/services/ 										./services/
 RUN mv /diyhue/BridgeEmulator/HueEmulator3.py 									./
-RUN mv /diyhue/diyhueui/index.html 										./flaskUI/templates/
-RUN cp -r /diyhue/diyhueui/static 										./flaskUI/
+RUN mv /diyhue/diyhueui/index.html 												./flaskUI/templates/
+RUN cp -r /diyhue/diyhueui/static 												./flaskUI/
 RUN rm -r /diyhue/diyhueui/static
 RUN mv /diyhue/BridgeEmulator/genCert.sh /diyhue/BridgeEmulator/openssl.conf 	./
 
