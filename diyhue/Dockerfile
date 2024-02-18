@@ -28,6 +28,10 @@ RUN curl -J -L -o $diyhue.tar.gz "https://github.com/hendriksen-mark/diyHue/arch
 	&& rm -rf $diyhue.tar.gz \
 	&& pip3 install -r /diyhue/requirements.txt --no-cache-dir
 
+RUN curl -sL https://github.com/diyhue/diyHueUI/releases/latest/download/DiyHueUI-release.zip -o diyHueUI.zip \
+    && unzip -qo diyHueUI.zip -d diyhue \
+	&& rm -rf diyHueUI.zip
+
 RUN apk --no-cache add --virtual build-deps gcc git make musl-dev \
 	&& git clone https://github.com/wolfcw/libfaketime \
 	&& cd libfaketime \
@@ -50,14 +54,11 @@ RUN mv /diyhue/BridgeEmulator/logManager/ 										./logManager/
 RUN mv /diyhue/BridgeEmulator/sensors/ 											./sensors/
 RUN mv /diyhue/BridgeEmulator/services/ 										./services/
 RUN mv /diyhue/BridgeEmulator/HueEmulator3.py 									./
+RUN mv /diyhue/BridgeEmulator/index.html ./flaskUI/templates/
+RUN cp -r /diyhue/BridgeEmulator/static ./flaskUI/
+RUN rm -r /diyhue/BridgeEmulator/static
 RUN mv /diyhue/BridgeEmulator/genCert.sh /diyhue/BridgeEmulator/openssl.conf 	./
 
-## Install the web interface
-RUN curl -sL https://github.com/diyhue/diyHueUI/releases/latest/download/DiyHueUI-release.zip -o diyHueUI.zip \
-	&& unzip -qo diyHueUI.zip \
-	&& mv index.html flaskUI/templates/ \
-	&& cp -r static flaskUI/ \
-	&& rm -r static
 
 # Copy additional local build files
 COPY rootfs ./
