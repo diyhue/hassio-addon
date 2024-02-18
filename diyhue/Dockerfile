@@ -29,7 +29,8 @@ RUN curl -J -L -o $diyhue.tar.gz "https://github.com/hendriksen-mark/diyHue/arch
 	&& pip3 install -r /diyhue/requirements.txt --no-cache-dir
 
 RUN curl -sL https://github.com/diyhue/diyHueUI/releases/latest/download/DiyHueUI-release.zip -o diyHueUI.zip \
-    && unzip -qo diyHueUI.zip -d diyhue \
+	&& mkdir /diyhue/diyhueui \
+    && unzip -qo diyHueUI.zip -d /diyhue/diyhueui \
 	&& rm -rf diyHueUI.zip
 
 RUN apk --no-cache add --virtual build-deps gcc git make musl-dev \
@@ -54,9 +55,9 @@ RUN mv /diyhue/BridgeEmulator/logManager/ 										./logManager/
 RUN mv /diyhue/BridgeEmulator/sensors/ 											./sensors/
 RUN mv /diyhue/BridgeEmulator/services/ 										./services/
 RUN mv /diyhue/BridgeEmulator/HueEmulator3.py 									./
-RUN mv /diyhue/BridgeEmulator/index.html ./flaskUI/templates/
-RUN cp -r /diyhue/BridgeEmulator/static ./flaskUI/
-RUN rm -r /diyhue/BridgeEmulator/static
+RUN mv /diyhue/diyhueui/index.html 										./flaskUI/templates/
+RUN cp -r /diyhue/diyhueui/static 										./flaskUI/
+RUN rm -r /diyhue/diyhueui/static
 RUN mv /diyhue/BridgeEmulator/genCert.sh /diyhue/BridgeEmulator/openssl.conf 	./
 
 
