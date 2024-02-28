@@ -23,10 +23,10 @@ RUN apk add -q -u python3 openssl nmap psmisc iproute2 alpine-sdk build-base
 RUN apk add --no-cache bluez
 
 # Download diyhue and untar it
-#RUN curl -J -L -o $diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/refs/heads/master.tar.gz" \
-RUN curl -J -L -o diyhue.tar.gz  "https://github.com/hendriksen-mark/diyHue/archive/refs/heads/master.tar.gz"
+RUN curl -J -L -o $diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/refs/heads/master.tar.gz"
+#RUN curl -J -L -o diyhue.tar.gz  "https://github.com/hendriksen-mark/diyHue/archive/refs/heads/master.tar.gz"
 RUN tar xzf diyhue.tar.gz --strip-components=1 -C diyhue 
-	#&& rm -rf $diyhue.tar.gz \
+RUN rm -rf $diyhue.tar.gz 
 RUN pip3 install -r /diyhue/requirements.txt --no-cache-dir
 
 # Install diyHue
@@ -39,15 +39,15 @@ RUN mv /diyhue/BridgeEmulator/services /opt/hue-emulator/
 RUN mv /diyhue/BridgeEmulator/configManager /opt/hue-emulator/
 RUN mv /diyhue/BridgeEmulator/logManager /opt/hue-emulator/
 RUN mv /diyhue/BridgeEmulator/HueEmulator3.py /opt/hue-emulator/
-RUN mv /diyhue/BridgeEmulator/githubInstall.sh /opt/hue-emulator/
-RUN mv /diyhue/BridgeEmulator/githubUIInstall.sh /opt/hue-emulator/
+#RUN mv /diyhue/BridgeEmulator/githubInstall.sh /opt/hue-emulator/
+#RUN mv /diyhue/BridgeEmulator/githubUIInstall.sh /opt/hue-emulator/
 RUN mv /diyhue/BridgeEmulator/genCert.sh /diyhue/BridgeEmulator/openssl.conf	/opt/hue-emulator/
 
 
 RUN curl -sL -o diyHueUI.zip https://github.com/diyhue/diyHueUI/releases/latest/download/DiyHueUI-release.zip
 RUN mkdir diyhueUI
 RUN unzip -qo diyHueUI.zip -d diyhueUI
-#	&& rm DiyHueUI-release.zip
+RUN rm diyHueUI.zip
 RUN mv /diyhueUI/index.html			/opt/hue-emulator/flaskUI/templates/
 RUN cp -r /diyhueUI/static			/opt/hue-emulator/flaskUI/
 RUN rm -r /diyhueUI/static
