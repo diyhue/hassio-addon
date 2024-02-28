@@ -24,9 +24,9 @@ RUN apk add --no-cache bluez
 
 # Download diyhue and untar it
 #RUN curl -J -L -o $diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/refs/heads/master.tar.gz" \
-RUN curl -J -L -o $diyhue.tar.gz "https://github.com/hendriksen-mark/diyHue/archive/refs/heads/master.tar.gz" \
-	&& tar xzvf $diyhue.tar.gz --strip-components=1 -C diyhue \
-	&& rm -rf $diyhue.tar.gz \
+RUN curl -J -L "https://github.com/hendriksen-mark/diyHue/archive/refs/heads/master.tar.gz" \
+	&& tar xzf diyHue-master.tar.gz --strip-components=1 -C diyhue \
+	#&& rm -rf $diyhue.tar.gz \
 	&& pip3 install -r /diyhue/requirements.txt --no-cache-dir
 
 # Install diyHue
@@ -39,18 +39,18 @@ RUN mv /diyhue/BridgeEmulator/services /opt/hue-emulator/
 RUN mv /diyhue/BridgeEmulator/configManager /opt/hue-emulator/
 RUN mv /diyhue/BridgeEmulator/logManager /opt/hue-emulator/
 RUN mv /diyhue/BridgeEmulator/HueEmulator3.py /opt/hue-emulator/
-#RUN mv /diyhue/BridgeEmulator/githubInstall.sh /opt/hue-emulator/
-#RUN mv /diyhue/BridgeEmulator/githubUIInstall.sh /opt/hue-emulator/
+RUN mv /diyhue/BridgeEmulator/githubInstall.sh /opt/hue-emulator/
+RUN mv /diyhue/BridgeEmulator/githubUIInstall.sh /opt/hue-emulator/
 RUN mv /diyhue/BridgeEmulator/genCert.sh /diyhue/BridgeEmulator/openssl.conf	/opt/hue-emulator/
 
 
-#RUN curl -sL https://github.com/diyhue/diyHueUI/releases/latest/download/DiyHueUI-release.zip -o diyHueUI.zip \
-# 	&& mkdir diyhueUI \
-#    	&& unzip -qo diyHueUI.zip -d diyhueUI \
-#	&& rm -rf diyHueUI.zip
-#RUN mv /diyHueUI/index.html			/opt/hue-emulator/flaskUI/templates/
-#RUN cp -r /diyHueUI/static			/opt/hue-emulator/flaskUI/
-#RUN rm -r /diyHueUI/static
+RUN curl -sL https://github.com/diyhue/diyHueUI/releases/latest/download/DiyHueUI-release.zip \
+ 	&& mkdir diyhueUI \
+    	&& unzip -qo DiyHueUI-release.zip -d diyhueUI \
+	&& rm DiyHueUI-release.zip
+RUN mv /diyHueUI/index.html			/opt/hue-emulator/flaskUI/templates/
+RUN cp -r /diyHueUI/static			/opt/hue-emulator/flaskUI/
+RUN rm -r /diyHueUI/static
 
 RUN apk --no-cache add --virtual build-deps gcc git make musl-dev \
 	&& git clone https://github.com/wolfcw/libfaketime \
