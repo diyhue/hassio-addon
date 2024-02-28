@@ -1,6 +1,6 @@
 {
 "name": "diyHue",
-"version": "2.0.11",
+"version": "2.0.12",
 "slug": "diyhue",
 "description": "Emulate a Hue Bridge, add lights, sensors etc. from different vendors into one Ecosystem",
 "webui": "http://[HOST]:[PORT:80]",
