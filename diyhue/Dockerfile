@@ -24,8 +24,8 @@ RUN apk add --no-cache bluez
 
 # Download diyhue and untar it
 #RUN curl -J -L -o $diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/refs/heads/master.tar.gz" \
-RUN curl -J -L "https://github.com/hendriksen-mark/diyHue/archive/refs/heads/master.tar.gz"
-RUN tar xzf diyHue-master.tar.gz --strip-components=1 -C diyhue 
+RUN curl -J -L -o diyhue.tar.gz  "https://github.com/hendriksen-mark/diyHue/archive/refs/heads/master.tar.gz"
+RUN tar xzf diyhue.tar.gz --strip-components=1 -C diyhue 
 	#&& rm -rf $diyhue.tar.gz \
 RUN pip3 install -r /diyhue/requirements.txt --no-cache-dir
 
