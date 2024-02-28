@@ -30,17 +30,17 @@ RUN curl -J -L -o $diyhue.tar.gz "https://github.com/hendriksen-mark/diyHue/arch
 	&& pip3 install -r /diyhue/requirements.txt --no-cache-dir
 
 # Install diyHue
-COPY /diyhue/BridgeEmulator/flaskUI /opt/hue-emulator/
-COPY /diyhue/BridgeEmulator/functions /opt/hue-emulator/
-COPY /diyhue/BridgeEmulator/lights /opt/hue-emulator/
-COPY /diyhue/BridgeEmulator/sensors /opt/hue-emulator/
-COPY /diyhue/BridgeEmulator/HueObjects /opt/hue-emulator/
-COPY /diyhue/BridgeEmulator/services /opt/hue-emulator/
-COPY /diyhue/BridgeEmulator/configManager /opt/hue-emulator/
-COPY /diyhue/BridgeEmulator/logManager /opt/hue-emulator/
-COPY /diyhue/BridgeEmulator/HueEmulator3.py /opt/hue-emulator/
-COPY /diyhue/BridgeEmulator/githubInstall.sh /opt/hue-emulator/
-COPY /diyhue/BridgeEmulator/githubUIInstall.sh /opt/hue-emulator/
+RUN mv /diyhue/BridgeEmulator/flaskUI /opt/hue-emulator/
+RUN mv /diyhue/BridgeEmulator/functions /opt/hue-emulator/
+RUN mv /diyhue/BridgeEmulator/lights /opt/hue-emulator/
+RUN mv /diyhue/BridgeEmulator/sensors /opt/hue-emulator/
+RUN mv /diyhue/BridgeEmulator/HueObjects /opt/hue-emulator/
+RUN mv /diyhue/BridgeEmulator/services /opt/hue-emulator/
+RUN mv /diyhue/BridgeEmulator/configManager /opt/hue-emulator/
+RUN mv /diyhue/BridgeEmulator/logManager /opt/hue-emulator/
+RUN mv /diyhue/BridgeEmulator/HueEmulator3.py /opt/hue-emulator/
+RUN mv /diyhue/BridgeEmulator/githubInstall.sh /opt/hue-emulator/
+RUN mv /diyhue/BridgeEmulator/githubUIInstall.sh /opt/hue-emulator/
 RUN mv /diyHueUI/index.html			/opt/hue-emulator/flaskUI/templates/
 RUN cp -r /diyHueUI/static			/opt/hue-emulator/flaskUI/
 RUN rm -r /diyHueUI/static
