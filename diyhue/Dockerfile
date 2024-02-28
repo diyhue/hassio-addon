@@ -29,23 +29,6 @@ RUN curl -J -L -o $diyhue.tar.gz "https://github.com/hendriksen-mark/diyHue/arch
 	&& rm -rf $diyhue.tar.gz \
 	&& pip3 install -r /diyhue/requirements.txt --no-cache-dir
 
-RUN curl -sL https://github.com/diyhue/diyHueUI/releases/latest/download/DiyHueUI-release.zip -o diyHueUI.zip \
- 	&& mkdir diyhueUI \
-    	&& unzip -qo diyHueUI.zip -d diyhueUI \
-	&& rm -rf diyHueUI.zip
-
-RUN apk --no-cache add --virtual build-deps gcc git make musl-dev \
-	&& git clone https://github.com/wolfcw/libfaketime \
-	&& cd libfaketime \
-	&& make \
-	&& mv src/*.so* /lib && mv src/faketime /bin \
-	&& cd - \
-	&& rm -rf libfaketime \
-	&& apk del build-deps
-
-# Set working directory to the Archive folder
-WORKDIR /opt/hue-emulator
-
 # Install diyHue
 COPY /diyhue/BridgeEmulator/flaskUI /opt/hue-emulator/
 COPY /diyhue/BridgeEmulator/functions /opt/hue-emulator/
@@ -63,6 +46,23 @@ RUN cp -r /diyHueUI/static			/opt/hue-emulator/flaskUI/
 RUN rm -r /diyHueUI/static
 RUN mv /diyhue/BridgeEmulator/genCert.sh /diyhue/BridgeEmulator/openssl.conf	/opt/hue-emulator/
 
+
+RUN curl -sL https://github.com/diyhue/diyHueUI/releases/latest/download/DiyHueUI-release.zip -o diyHueUI.zip \
+ 	&& mkdir diyhueUI \
+    	&& unzip -qo diyHueUI.zip -d diyhueUI \
+	&& rm -rf diyHueUI.zip
+
+RUN apk --no-cache add --virtual build-deps gcc git make musl-dev \
+	&& git clone https://github.com/wolfcw/libfaketime \
+	&& cd libfaketime \
+	&& make \
+	&& mv src/*.so* /lib && mv src/faketime /bin \
+	&& cd - \
+	&& rm -rf libfaketime \
+	&& apk del build-deps
+
+# Set working directory to the Archive folder
+WORKDIR /opt/hue-emulator
 
 # Copy additional local build files
 COPY rootfs ./
