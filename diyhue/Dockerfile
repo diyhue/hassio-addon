@@ -29,10 +29,9 @@ RUN curl -J -L -o $diyhue.tar.gz "https://github.com/hendriksen-mark/diyHue/arch
 	&& rm -rf $diyhue.tar.gz \
 	&& pip3 install -r /diyhue/requirements.txt --no-cache-dir
 
-#RUN curl -sL https://github.com/diyhue/diyHueUI/releases/latest/download/DiyHueUI-release.zip -o diyHueUI.zip \
-RUN curl -sL https://github.com/hendriksen-mark/diyHueUI/releases/latest/download/DiyHueUI-release.zip -o diyHueUI.zip \
- 	&& mkdir diyHueUI \
-    	&& unzip -qo diyHueUI.zip -d diyHueUI \
+RUN curl -sL https://github.com/diyhue/diyHueUI/releases/latest/download/DiyHueUI-release.zip -o diyHueUI.zip \
+ 	&& mkdir diyhueUI \
+    	&& unzip -qo diyHueUI.zip -d diyhueUI \
 	&& rm -rf diyHueUI.zip
 
 RUN apk --no-cache add --virtual build-deps gcc git make musl-dev \
@@ -57,6 +56,8 @@ RUN mv /diyhue/BridgeEmulator/logManager/	./logManager/
 RUN mv /diyhue/BridgeEmulator/sensors/		./sensors/
 RUN mv /diyhue/BridgeEmulator/services/		./services/
 RUN mv /diyhue/BridgeEmulator/HueEmulator3.py	./
+RUN mv /diyhue/BridgeEmulator/githubInstall.sh	./
+RUN mv /diyhue/BridgeEmulator/githubUIInstall.sh	./
 RUN mv /diyHueUI/index.html			./flaskUI/templates/
 RUN cp -r /diyHueUI/static			./flaskUI/
 RUN rm -r /diyHueUI/static
