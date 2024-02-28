@@ -47,17 +47,17 @@ RUN apk --no-cache add --virtual build-deps gcc git make musl-dev \
 WORKDIR /opt/hue-emulator
 
 # Install diyHue
-RUN mv /diyhue/BridgeEmulator/HueObjects/	/opt/hue-emulator/HueObjects/
-RUN mv /diyhue/BridgeEmulator/configManager/	/opt/hue-emulator/configManager/
-RUN mv /diyhue/BridgeEmulator/flaskUI/		/opt/hue-emulator/flaskUI/
-RUN mv /diyhue/BridgeEmulator/functions/	/opt/hue-emulator/functions/
-RUN mv /diyhue/BridgeEmulator/lights/		/opt/hue-emulator/lights/
-RUN mv /diyhue/BridgeEmulator/logManager/	/opt/hue-emulator/logManager/
-RUN mv /diyhue/BridgeEmulator/sensors/		/opt/hue-emulator/sensors/
-RUN mv /diyhue/BridgeEmulator/services/		/opt/hue-emulator/services/
-RUN mv /diyhue/BridgeEmulator/HueEmulator3.py	/opt/hue-emulator/
-RUN mv /diyhue/BridgeEmulator/githubInstall.sh	/opt/hue-emulator/
-RUN mv /diyhue/BridgeEmulator/githubUIInstall.sh	/opt/hue-emulator/
+COPY ./BridgeEmulator/flaskUI/ /opt/hue-emulator/flaskUI/
+COPY ./BridgeEmulator/functions/ /opt/hue-emulator/functions/
+COPY ./BridgeEmulator/lights/ /opt/hue-emulator/lights/
+COPY ./BridgeEmulator/sensors/ /opt/hue-emulator/sensors/
+COPY ./BridgeEmulator/HueObjects/ /opt/hue-emulator/HueObjects/
+COPY ./BridgeEmulator/services/ /opt/hue-emulator/services/
+COPY ./BridgeEmulator/configManager/ /opt/hue-emulator/configManager/
+COPY ./BridgeEmulator/logManager/ /opt/hue-emulator/logManager/
+COPY ./BridgeEmulator/HueEmulator3.py /opt/hue-emulator/
+COPY ./BridgeEmulator/githubInstall.sh /opt/hue-emulator/
+COPY ./BridgeEmulator/githubUIInstall.sh /opt/hue-emulator/
 RUN mv /diyHueUI/index.html			/opt/hue-emulator/flaskUI/templates/
 RUN cp -r /diyHueUI/static			/opt/hue-emulator/flaskUI/
 RUN rm -r /diyHueUI/static
