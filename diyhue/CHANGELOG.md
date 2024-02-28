@@ -4,7 +4,11 @@ All notable changes to this project will be documented in this file. The format 
 
 
 
-## [2.0.11 - 18.2.2024]
+## [2.0.12 - 28.2.2024]
+### update
+ - fix install issue
+
+ ## [2.0.11 - 18.2.2024]
 ### add
  - Updated webUi
 
