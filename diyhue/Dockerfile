@@ -44,10 +44,10 @@ RUN mv /diyhue/BridgeEmulator/githubUIInstall.sh /opt/hue-emulator/
 RUN mv /diyhue/BridgeEmulator/genCert.sh /diyhue/BridgeEmulator/openssl.conf	/opt/hue-emulator/
 
 
-RUN curl -sL https://github.com/diyhue/diyHueUI/releases/latest/download/DiyHueUI-release.zip \
- 	&& mkdir diyhueUI \
-    	&& unzip -qo DiyHueUI-release.zip -d diyhueUI \
-	&& rm DiyHueUI-release.zip
+RUN curl -sL -o diyHueUI.zip https://github.com/diyhue/diyHueUI/releases/latest/download/DiyHueUI-release.zip
+RUN mkdir diyhueUI
+RUN unzip -qo diyHueUI.zip -d diyhueUI
+#	&& rm DiyHueUI-release.zip
 RUN mv /diyHueUI/index.html			/opt/hue-emulator/flaskUI/templates/
 RUN cp -r /diyHueUI/static			/opt/hue-emulator/flaskUI/
 RUN rm -r /diyHueUI/static
