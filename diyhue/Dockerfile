@@ -39,11 +39,8 @@ RUN mv /diyhue/BridgeEmulator/services /opt/hue-emulator/
 RUN mv /diyhue/BridgeEmulator/configManager /opt/hue-emulator/
 RUN mv /diyhue/BridgeEmulator/logManager /opt/hue-emulator/
 RUN mv /diyhue/BridgeEmulator/HueEmulator3.py /opt/hue-emulator/
-RUN mv /diyhue/BridgeEmulator/githubInstall.sh /opt/hue-emulator/
-RUN mv /diyhue/BridgeEmulator/githubUIInstall.sh /opt/hue-emulator/
-RUN mv /diyHueUI/index.html			/opt/hue-emulator/flaskUI/templates/
-RUN cp -r /diyHueUI/static			/opt/hue-emulator/flaskUI/
-RUN rm -r /diyHueUI/static
+#RUN mv /diyhue/BridgeEmulator/githubInstall.sh /opt/hue-emulator/
+#RUN mv /diyhue/BridgeEmulator/githubUIInstall.sh /opt/hue-emulator/
 RUN mv /diyhue/BridgeEmulator/genCert.sh /diyhue/BridgeEmulator/openssl.conf	/opt/hue-emulator/
 
 
@@ -51,6 +48,9 @@ RUN curl -sL https://github.com/diyhue/diyHueUI/releases/latest/download/DiyHueU
  	&& mkdir diyhueUI \
     	&& unzip -qo diyHueUI.zip -d diyhueUI \
 	&& rm -rf diyHueUI.zip
+RUN mv /diyHueUI/index.html			/opt/hue-emulator/flaskUI/templates/
+RUN cp -r /diyHueUI/static			/opt/hue-emulator/flaskUI/
+RUN rm -r /diyHueUI/static
 
 RUN apk --no-cache add --virtual build-deps gcc git make musl-dev \
 	&& git clone https://github.com/wolfcw/libfaketime \
