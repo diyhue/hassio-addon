@@ -40,17 +40,17 @@ RUN cp -r /diyhue-master/BridgeEmulator/HueObjects/ /opt/hue-emulator/HueObjects
 RUN cp -r /diyhue-master/BridgeEmulator/services/ /opt/hue-emulator/services/
 RUN cp -r /diyhue-master/BridgeEmulator/configManager/ /opt/hue-emulator/configManager/
 RUN cp -r /diyhue-master/BridgeEmulator/logManager/ /opt/hue-emulator/logManager/
-RUN mv /diyhue-master/BridgeEmulator/HueEmulator3.py /opt/hue-emulator/
-RUN mv /diyhue-master/BridgeEmulator/githubInstall.sh /opt/hue-emulator/
-RUN mv /diyhue-master/BridgeEmulator/githubUIInstall.sh /opt/hue-emulator/
-RUN mv /diyhue-master/BridgeEmulator/genCert.sh /diyhue-master/BridgeEmulator/openssl.conf	/opt/hue-emulator/
+RUN cp -r /diyhue-master/BridgeEmulator/HueEmulator3.py /opt/hue-emulator/
+RUN cp -r /diyhue-master/BridgeEmulator/githubInstall.sh /opt/hue-emulator/
+RUN cp -r /diyhue-master/BridgeEmulator/githubUIInstall.sh /opt/hue-emulator/
+RUN cp -r /diyhue-master/BridgeEmulator/genCert.sh /diyhue-master/BridgeEmulator/openssl.conf	/opt/hue-emulator/
 
 
 RUN curl -sL -o diyHueUI.zip https://github.com/diyhue/diyHueUI/releases/latest/download/DiyHueUI-release.zip
 RUN mkdir diyhueUI
 RUN unzip -qo diyHueUI.zip -d diyhueUI
 RUN rm diyHueUI.zip
-RUN mv /diyhueUI/index.html			/opt/hue-emulator/flaskUI/templates/
+RUN cp -r /diyhueUI/index.html			/opt/hue-emulator/flaskUI/templates/
 RUN cp -r /diyhueUI/static			/opt/hue-emulator/flaskUI/
 RUN rm -r /diyhueUI/static
 
