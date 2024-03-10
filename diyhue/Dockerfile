@@ -25,8 +25,8 @@ RUN apk add --no-cache bluez
 # Download diyhue and untar it
 #RUN curl -J -L -o diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/refs/heads/master.tar.gz"
 #RUN curl -J -L -o diyhue.tar.gz  "https://github.com/hendriksen-mark/diyHue/archive/refs/heads/master.tar.gz"
-#RUN curl -sL -o diyhue.zip https://github.com/diyhue/diyhue/archive/master.zip
-RUN curl -sL -o diyhue.zip https://github.com/hendriksen-mark/diyhue/archive/master.zip
+RUN curl -sL -o diyhue.zip https://github.com/diyhue/diyhue/archive/master.zip
+#RUN curl -sL -o diyhue.zip https://github.com/hendriksen-mark/diyhue/archive/master.zip
 #RUN tar xzf diyhue.tar.gz --strip-components=1 -C diyhue 
 #RUN rm -rf diyhue.tar.gz 
 RUN unzip -qo diyhue.zip
