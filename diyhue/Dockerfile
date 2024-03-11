@@ -30,7 +30,7 @@ RUN curl -sL -o diyhue.zip https://github.com/diyhue/diyhue/archive/master.zip
 #RUN tar xzf diyhue.tar.gz --strip-components=1 -C diyhue 
 #RUN rm -rf diyhue.tar.gz 
 RUN unzip -qo diyhue.zip
-RUN rm diyhue.zip
+#RUN rm diyhue.zip
 RUN pip3 install -r /diyhue-master/requirements.txt --no-cache-dir
 
 # Install diyHue
