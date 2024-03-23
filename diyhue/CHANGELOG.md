@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. The format 
 
 
 
+## [2.0.14 - 24.3.2024]
+### Fix
+ - fix libfaketime install error
+
 ## [2.0.13 - 10.3.2024]
 ### add
  - add update service
