@@ -56,10 +56,10 @@ RUN cp -r /diyhueUI/index.html			/opt/hue-emulator/flaskUI/templates/
 RUN cp -r /diyhueUI/static			/opt/hue-emulator/flaskUI/
 RUN rm -r /diyhueUI/static
 
-RUN apk --no-cache add --virtual build-deps gcc git make musl-dev 
-RUN git clone https://github.com/wolfcw/libfaketime /libfaketime
-WORKDIR /libfaketime
-RUN git checkout v0.9.10 \
+RUN apk --no-cache add --virtual build-deps gcc git make musl-dev \
+	&& git clone https://github.com/wolfcw/libfaketime \
+	&& cd libfaketime \
+	&& git checkout v0.9.10 \
 	&& make \
 	&& mv src/*.so* /lib && mv src/faketime /bin \
 	&& cd - \
