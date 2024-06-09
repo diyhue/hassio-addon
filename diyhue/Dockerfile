@@ -44,7 +44,6 @@ RUN cp -r  /diyHue-master/BridgeEmulator/configManager /opt/hue-emulator/
 RUN cp -r  /diyHue-master/BridgeEmulator/logManager /opt/hue-emulator/
 RUN cp -r  /diyHue-master/BridgeEmulator/HueEmulator3.py /opt/hue-emulator/
 RUN cp -r  /diyHue-master/BridgeEmulator/githubInstall.sh /opt/hue-emulator/
-RUN cp -r  /diyHue-master/BridgeEmulator/githubUIInstall.sh /opt/hue-emulator/
 RUN cp -r  /diyHue-master/BridgeEmulator/genCert.sh  /diyHue-master/BridgeEmulator/openssl.conf	/opt/hue-emulator/
 
 
