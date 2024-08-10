@@ -103,7 +103,7 @@ You have several options to get them answered:
 -    The diyHue Slack Channel [diyHue Slack](https://diyhue.slack.com/)
 
 You could also open an issue here:
-[For HA related issues](https://github.com/diyhue/hassio-adddon/issues).
+[For HA related issues](https://github.com/diyhue/hassio-addon/issues).
 [For DiyHue related issues](https://github.com/diyhue/diyHue/issues).
 
 
