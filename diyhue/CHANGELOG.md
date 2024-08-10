@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. The format 
 
 
 
+## [2.0.15 - 10.8.2024]
+### Fix
+ - fix grouped_light owner missing
+
 ## [2.0.14 - 24.3.2024]
 ### Fix
  - fix libfaketime install error
