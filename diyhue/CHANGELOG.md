@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. The format 
 
 
 
+## [2.0.16 - 2.9.2024]
+### Fix
+ - Allot of fixes, see main repo for more info
+
 ## [2.0.15 - 10.8.2024]
 ### Fix
  - fix grouped_light owner missing
