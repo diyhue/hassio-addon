@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. The format 
 
 
 
+## [2.0.19 - 1.10.2024]
+### Fix
+ - fix AttributeError: 'list' object has no attribute 'name', see main repo for more info
+
 ## [2.0.18 - 27.9.2024]
 ### Fix
  - fix ZeroDivisionError: division by zero, see main repo for more info
