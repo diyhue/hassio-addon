@@ -12,7 +12,7 @@ ENV BUILD_ARCHI = ${BUILD_ARCH}
 
 # Other settings
 ENV LANG C.UTF-8
-ENV DIYHUE_VERSION=master
+ENV BRANCH=dev
 ENV WORKING_DIR=/opt/hue-emulator
 
 # Create the needed folders
@@ -22,29 +22,24 @@ RUN mkdir diyhue config ${WORKING_DIR}
 RUN apk add -q -u python3 openssl nmap psmisc iproute2 alpine-sdk build-base
 RUN apk add --no-cache bluez
 
-# Download diyhue and untar it
-#RUN curl -J -L -o diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/refs/heads/master.tar.gz"
-#RUN curl -J -L -o diyhue.tar.gz  "https://github.com/hendriksen-mark/diyHue/archive/refs/heads/master.tar.gz"
-RUN curl -sL -o diyhue.zip https://github.com/diyhue/diyhue/archive/master.zip
-#RUN curl -sL -o diyhue.zip https://github.com/hendriksen-mark/diyhue/archive/master.zip
-#RUN tar xzf diyhue.tar.gz --strip-components=1 -C diyhue 
-#RUN rm -rf diyhue.tar.gz 
+# Download diyhue and unzip it
+RUN curl -sL -o diyhue.zip https://github.com/diyhue/diyhue/archive/dev.zip
 RUN unzip -qo diyhue.zip
 RUN rm diyhue.zip
-RUN pip3 install -r  /diyHue-master/requirements.txt --no-cache-dir
+RUN pip3 install -r  /diyHue-dev/requirements.txt --no-cache-dir
 
 # Install diyHue
-RUN cp -r  /diyHue-master/BridgeEmulator/flaskUI /opt/hue-emulator/
-RUN cp -r  /diyHue-master/BridgeEmulator/functions /opt/hue-emulator/
-RUN cp -r  /diyHue-master/BridgeEmulator/lights /opt/hue-emulator/
-RUN cp -r  /diyHue-master/BridgeEmulator/sensors /opt/hue-emulator/
-RUN cp -r  /diyHue-master/BridgeEmulator/HueObjects /opt/hue-emulator/
-RUN cp -r  /diyHue-master/BridgeEmulator/services /opt/hue-emulator/
-RUN cp -r  /diyHue-master/BridgeEmulator/configManager /opt/hue-emulator/
-RUN cp -r  /diyHue-master/BridgeEmulator/logManager /opt/hue-emulator/
-RUN cp -r  /diyHue-master/BridgeEmulator/HueEmulator3.py /opt/hue-emulator/
-RUN cp -r  /diyHue-master/BridgeEmulator/githubInstall.sh /opt/hue-emulator/
-RUN cp -r  /diyHue-master/BridgeEmulator/genCert.sh  /diyHue-master/BridgeEmulator/openssl.conf	/opt/hue-emulator/
+RUN cp -r  /diyHue-dev/BridgeEmulator/flaskUI /opt/hue-emulator/
+RUN cp -r  /diyHue-dev/BridgeEmulator/functions /opt/hue-emulator/
+RUN cp -r  /diyHue-dev/BridgeEmulator/lights /opt/hue-emulator/
+RUN cp -r  /diyHue-dev/BridgeEmulator/sensors /opt/hue-emulator/
+RUN cp -r  /diyHue-dev/BridgeEmulator/HueObjects /opt/hue-emulator/
+RUN cp -r  /diyHue-dev/BridgeEmulator/services /opt/hue-emulator/
+RUN cp -r  /diyHue-dev/BridgeEmulator/configManager /opt/hue-emulator/
+RUN cp -r  /diyHue-dev/BridgeEmulator/logManager /opt/hue-emulator/
+RUN cp -r  /diyHue-dev/BridgeEmulator/HueEmulator3.py /opt/hue-emulator/
+RUN cp -r  /diyHue-dev/BridgeEmulator/githubInstall.sh /opt/hue-emulator/
+RUN cp -r  /diyHue-dev/BridgeEmulator/genCert.sh  /diyHue-dev/BridgeEmulator/openssl.conf	/opt/hue-emulator/
 
 
 RUN curl -sL -o diyHueUI.zip https://github.com/diyhue/diyHueUI/releases/latest/download/DiyHueUI-release.zip
