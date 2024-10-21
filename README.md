@@ -28,6 +28,9 @@ Add the repository URL under **Supervisor → Add-on store → ⋮ → Manage ad
 
     https://github.com/diyhue/hassio-addon
 
+To use the Dev bransh add `#dev` to the url, before using the dev bransh you need to remove your current config files to prevent errors, also when moving back to master you need to remove your dev config, be aware this is still in development and problems may occur.
+
+    https://github.com/diyhue/hassio-addon#dev
 
 ## Changelog
 
