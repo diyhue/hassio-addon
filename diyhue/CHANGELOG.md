@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. The format 
 
 
 
+## [2.0.20 - 26.10.2024]
+### Fix
+ - fix unsupported operand type(s) for /: 'NoneType' and 'int'
+### Add
+ - Add XY light
+
 ## [2.0.19 - 1.10.2024]
 ### Fix
  - fix AttributeError: 'list' object has no attribute 'name', see main repo for more info
