@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. The format 
 
 
 
+## [2.0.21 - 18.11.2024]
+### remove
+ - remove deconz from options, setup via webui, see main repo for more info
+### update
+ - move to vite, see main repo for more info
+
 ## [2.0.20 - 26.10.2024]
 ### Fix
  - fix unsupported operand type(s) for /: 'NoneType' and 'int'
@@ -94,7 +100,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Update
  - update swversion to 1952086020
 
- 
+
 ## [2.0.2 - 24.6.2022]
 
 ### Update
@@ -113,7 +119,7 @@ All notable changes to this project will be documented in this file. The format 
 
 Official diyHue Hassio Addon Release
 
-This addon is only compatible with the "BETA" of the initial addon Release by Max. 
+This addon is only compatible with the "BETA" of the initial addon Release by Max.
 At this point we would like to thank Max for his great work upon we will continue this Addon.
 Max and diyhue agreed to make this Addon official.
 

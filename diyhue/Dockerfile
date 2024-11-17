@@ -46,8 +46,8 @@ RUN curl -sL -o diyHueUI.zip https://github.com/diyhue/diyHueUI/releases/latest/
 RUN mkdir diyhueUI
 RUN unzip -qo diyHueUI.zip -d diyhueUI
 RUN rm diyHueUI.zip
-RUN cp -r /diyhueUI/index.html			/opt/hue-emulator/flaskUI/templates/
-RUN cp -r /diyhueUI/static			/opt/hue-emulator/flaskUI/
+RUN cp -r /diyhueUI/dist/index.html			/opt/hue-emulator/flaskUI/templates/
+RUN cp -r /diyhueUI/dist/assets			/opt/hue-emulator/flaskUI/
 RUN rm -r /diyhueUI
 
 RUN apk --no-cache add --virtual build-deps gcc git make musl-dev \
@@ -94,8 +94,8 @@ LABEL \
 	org.opencontainers.image.authors="diyHue <info@diyHue.org>" \
 	org.opencontainers.image.licenses="MIT" \
 	org.opencontainers.image.url="diyHue.org" \
-	org.opencontainers.image.source="" \
-	org.opencontainers.image.documentation="" \
+	org.opencontainers.image.source="https://github.com/diyhue/diyhue" \
+	org.opencontainers.image.documentation="diyhue.readthedocs.io" \
 	org.opencontainers.image.created=${BUILD_DATE} \
 	org.opencontainers.image.revision=${BUILD_REF} \
 	org.opencontainers.image.version=${BUILD_VERSION}

@@ -1,36 +1,41 @@
 {
-"name": "diyHue",
-"version": "2.0.20",
-"slug": "diyhue",
-"description": "Emulate a Hue Bridge, add lights, sensors etc. from different vendors into one Ecosystem",
-"webui": "http://[HOST]:[PORT:80]",
-"panel_icon": "mdi:home-lightbulb",
-"arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
-"ports": {
-},
-"ports_description": {
-},
-"auth_api": true,
-"hassio_api": true,
-"host_network": true,
-"uart": true,
-"map": ["config:rw", "share:rw"],
-"options": {
-    "config_path": "/config/diyhue",
-    "mac": "xx:xx:xx:xx:xx:xx",
-    "debug": false,
-    "deconz_ip": "",
-    "no_serve_https": false,
-    "http_port": 80,
-    "https_port": 443
-},
-"schema": {
-    "config_path": "str",
-    "mac": "str",
-    "debug": "bool",
-    "deconz_ip": "str",
-    "no_serve_https": "bool",
-    "http_port": "int",
-    "https_port": "int"
-}
+    "name": "diyHue",
+    "version": "2.0.21",
+    "slug": "diyhue",
+    "description": "Emulate a Hue Bridge, add lights, sensors etc. from different vendors into one Ecosystem",
+    "webui": "http://[HOST]:[PORT:80]",
+    "panel_icon": "mdi:home-lightbulb",
+    "arch": [
+        "armhf",
+        "armv7",
+        "aarch64",
+        "amd64",
+        "i386"
+    ],
+    "ports": {},
+    "ports_description": {},
+    "auth_api": true,
+    "hassio_api": true,
+    "host_network": true,
+    "uart": true,
+    "map": [
+        "config:rw",
+        "share:rw"
+    ],
+    "options": {
+        "config_path": "/config/diyhue",
+        "mac": "xx:xx:xx:xx:xx:xx",
+        "debug": false,
+        "no_serve_https": false,
+        "http_port": 80,
+        "https_port": 443
+    },
+    "schema": {
+        "config_path": "str",
+        "mac": "str",
+        "debug": "bool",
+        "no_serve_https": "bool",
+        "http_port": "int",
+        "https_port": "int"
+    }
 }
