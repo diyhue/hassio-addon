@@ -32,7 +32,6 @@ config_path: /config/diyhue
 mac: "XX:XX:XX:XX:XX:XX"
 debug: true
 no-serve-https: false
-deconz_ip: 192.168.0.0
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
@@ -60,10 +59,6 @@ You have to set this value to true if you are running hassio under https. Hassio
 
 Valid values: `false`, `true`.
 
-### Option: `deconz_ip`
-
-Here you can enter the IP-Address of your Deconz instance.
-
 
 ## Sidepanel Link
 
@@ -73,7 +68,7 @@ Hit next.
 For Title enter `diyHue`
 For Icon enter `mdi:home-lightbulb`
 Hit create.
- 
+
 
 ## Known issues and limitations
 
@@ -110,7 +105,7 @@ You could also open an issue here:
 ## Authors & contributors
 
 The original setup of this repository is by Max Beckenbauer.
-diyHue adopted his work and is now releasing the official addon upon his work. 
+diyHue adopted his work and is now releasing the official addon upon his work.
 **Thank you Max**
 
 For a full list of all authors and contributors, check credits section of the main README.md.
