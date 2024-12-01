@@ -1,6 +1,6 @@
 {
     "name": "diyHue",
-    "version": "2.0.26",
+    "version": "2.0.27",
     "slug": "diyhue",
     "description": "Emulate a Hue Bridge, add lights, sensors etc. from different vendors into one Ecosystem",
     "webui": "http://[HOST]:[PORT:80]",
@@ -28,7 +28,8 @@
         "debug": false,
         "no_serve_https": false,
         "http_port": 80,
-        "https_port": 443
+        "https_port": 443,
+        "ip": ""
     },
     "schema": {
         "config_path": "str",
@@ -36,6 +37,7 @@
         "debug": "bool",
         "no_serve_https": "bool",
         "http_port": "int",
-        "https_port": "int"
+        "https_port": "int",
+        "ip": "str"
     }
 }
