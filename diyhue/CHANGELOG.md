@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.29 - 3.12.2024]
+### update
+    - update 1 non udp light per frame.
+
 ## [2.0.28 - 1.12.2024]
 ### update
     - update wled
