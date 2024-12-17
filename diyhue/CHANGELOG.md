@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.30 - 17.12.2024]
+### fix
+    - Fix FPS counter in entertainment.
+    - Fix non udp lights in entertainment.https://github.com/diyhue/diyHue/issues/1057
+    - Exclude entertainment groups from scripts.
+### add
+    - Add `LightGroup` as Zone. https://github.com/diyhue/diyHue/issues/1059
+
 ## [2.0.29 - 3.12.2024]
 ### update
     - update 1 non udp light per frame.
