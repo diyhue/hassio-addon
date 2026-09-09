@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base-python:5.3.4
+ARG BUILD_FROM=ghcr.io/hassio-addons/base-python:17.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -13,22 +13,22 @@ ENV BUILD_ARCHI = ${BUILD_ARCH}
 # Other settings
 ENV LANG C.UTF-8
 ENV DIYHUE_VERSION=master
-ENV DIYHUE_COMMIT=a0f1584732b6eca3ae1ff7497c9a1039b9d396e6
-ENV DIYHUE_UI_VERSION=v2.0.2
+ENV DIYHUE_COMMIT=ebd0eaf493e1054515a5d996bcb3fea36a154c0f
+ENV DIYHUE_UI_VERSION=v2.0.3
 ENV WORKING_DIR=/opt/hue-emulator
 
 # Create the needed folders
 RUN mkdir diyhue config ${WORKING_DIR}
 
 # Install all needed dependencies
-RUN apk add -q -u python3 openssl nmap psmisc iproute2 alpine-sdk build-base
+RUN apk add -q -u python3 openssl nmap psmisc iproute2 alpine-sdk build-base curl unzip ca-certificates
 RUN apk add --no-cache bluez
 
 # Download diyhue and unzip it
 RUN curl -sL -o diyhue.zip https://github.com/diyhue/diyHue/archive/${DIYHUE_COMMIT}.zip
 RUN unzip -qo diyhue.zip
 RUN rm diyhue.zip
-RUN pip3 install -r /diyHue-${DIYHUE_COMMIT}/requirements.txt --no-cache-dir
+RUN pip3 install -r /diyHue-${DIYHUE_COMMIT}/requirements.txt --no-cache-dir --break-system-packages --ignore-installed
 
 # Install diyHue
 RUN cp -r /diyHue-${DIYHUE_COMMIT}/BridgeEmulator/flaskUI /opt/hue-emulator/

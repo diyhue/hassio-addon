@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.32 - 9.9.2026]
+### update
+    - update diyHue to master `ebd0eaf` (15.8.2026)
+    - update diyHueUI to v2.0.3
+    - update add-on base image to `ghcr.io/hassio-addons/base-python:17.0.0`
+### info
+    - entertainment sync, V2 API events, WLED Hue effects, RDM002, Domoticz, HA color temp, Hue BLE, log flooding
+    - see main repo for more info
+
 ## [2.0.31 - 10.1.2025]
 ### update
     - update gradient lights.
