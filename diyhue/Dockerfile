@@ -20,11 +20,14 @@ ENV WORKING_DIR=/opt/hue-emulator
 # Create the needed folders
 RUN mkdir diyhue config ${WORKING_DIR}
 
-# Do not apk upgrade / apk add -u: the 17.0.0 image ABI (musl, libcrypto3)
-# does not match current Alpine indexes and the solver fails.
-RUN apk add --no-cache \
-        python3 openssl nmap psmisc iproute2 alpine-sdk build-base \
-        curl unzip ca-certificates bluez
+# 17.0.0 pins musl=1.2.5-r10 and libcrypto3=3.5.1 in /etc/apk/world.
+# alpine-sdk/openssl from today's index need musl-dev-r12 / openssl 3.5.8.
+# Upgrade musl first (overrides the pin), then add tools. Do not apk add
+# python3 or openssl — both are already in the image and conflict.
+RUN apk add --no-cache --upgrade musl musl-utils \
+    && apk add --no-cache \
+        gcc make musl-dev git \
+        nmap psmisc iproute2 curl unzip bluez
 
 # Download diyhue and unzip it
 RUN curl -sL -o diyhue.zip https://github.com/diyhue/diyHue/archive/${DIYHUE_COMMIT}.zip
