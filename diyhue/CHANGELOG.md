@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.33 - 9.9.2026]
+### fix
+    - fix addon install: apk musl/libcrypto3 conflict on base-python 17.0.0
+
 ## [2.0.32 - 9.9.2026]
 ### update
     - update diyHue to master `ebd0eaf` (15.8.2026)

@@ -20,9 +20,12 @@ ENV WORKING_DIR=/opt/hue-emulator
 # Create the needed folders
 RUN mkdir diyhue config ${WORKING_DIR}
 
-# Install all needed dependencies
-RUN apk add -q -u python3 openssl nmap psmisc iproute2 alpine-sdk build-base curl unzip ca-certificates
-RUN apk add --no-cache bluez
+# Upgrade first: base-python:17.0.0 has older musl/libcrypto3 than current Alpine repos.
+# `apk add -u` then pulls alpine-sdk/openssl that require the newer ABI and fails.
+RUN apk upgrade --no-cache \
+    && apk add --no-cache \
+        python3 openssl nmap psmisc iproute2 alpine-sdk build-base \
+        curl unzip ca-certificates bluez
 
 # Download diyhue and unzip it
 RUN curl -sL -o diyhue.zip https://github.com/diyhue/diyHue/archive/${DIYHUE_COMMIT}.zip
