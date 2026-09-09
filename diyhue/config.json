@@ -1,6 +1,6 @@
 {
     "name": "diyHue",
-    "version": "2.0.37",
+    "version": "2.0.38",
     "slug": "diyhue",
     "description": "Emulate a Hue Bridge, add lights, sensors etc. from different vendors into one Ecosystem",
     "webui": "http://[HOST]:[PORT:80]",
@@ -14,6 +14,7 @@
     ],
     "ports": {},
     "ports_description": {},
+    "init": false,
     "auth_api": true,
     "hassio_api": true,
     "host_network": true,
