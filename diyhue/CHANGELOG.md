@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.37 - 9.9.2026]
+### fix
+    - install Alpine `libfaketime` instead of compiling 0.9.10 (fails on GCC 14)
+
 ## [2.0.36 - 9.9.2026]
 ### fix
     - fix addon install: upgrade pinned musl, do not apk add python3/openssl
