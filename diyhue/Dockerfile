@@ -8,10 +8,10 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Set the build architecture and convert it from hassio to diyhue style
 # armhf, armv7, aarch64, amd64, i386
 ARG BUILD_ARCH=aarch64
-ENV BUILD_ARCHI = ${BUILD_ARCH}
+ENV BUILD_ARCHI=${BUILD_ARCH}
 
 # Other settings
-ENV LANG C.UTF-8
+ENV LANG=C.UTF-8
 ENV DIYHUE_VERSION=master
 ENV DIYHUE_COMMIT=ebd0eaf493e1054515a5d996bcb3fea36a154c0f
 ENV DIYHUE_UI_VERSION=v2.0.3
@@ -20,10 +20,9 @@ ENV WORKING_DIR=/opt/hue-emulator
 # Create the needed folders
 RUN mkdir diyhue config ${WORKING_DIR}
 
-# Upgrade first: base-python:17.0.0 has older musl/libcrypto3 than current Alpine repos.
-# `apk add -u` then pulls alpine-sdk/openssl that require the newer ABI and fails.
-RUN apk upgrade --no-cache \
-    && apk add --no-cache \
+# Do not apk upgrade / apk add -u: the 17.0.0 image ABI (musl, libcrypto3)
+# does not match current Alpine indexes and the solver fails.
+RUN apk add --no-cache \
         python3 openssl nmap psmisc iproute2 alpine-sdk build-base \
         curl unzip ca-certificates bluez
 

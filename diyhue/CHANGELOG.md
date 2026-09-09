@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.35 - 9.9.2026]
+### fix
+    - fix addon install: use `apk add --no-cache` only (no upgrade / -u)
+
+## [2.0.34 - 9.9.2026]
+### fix
+    - fix Dockerfile ENV syntax (`key=value`)
+    - fix addon install: `apk upgrade --available` before alpine-sdk/openssl
+
 ## [2.0.33 - 9.9.2026]
 ### fix
     - fix addon install: apk musl/libcrypto3 conflict on base-python 17.0.0
