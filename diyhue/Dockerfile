@@ -18,13 +18,12 @@ ENV WORKING_DIR=/opt/hue-emulator
 # Create the needed folders
 RUN mkdir diyhue config ${WORKING_DIR}
 
-# 17.0.0 pins musl=1.2.5-r10 and libcrypto3=3.5.1 in /etc/apk/world.
-# alpine-sdk/openssl from today's index need musl-dev-r12 / openssl 3.5.8.
-# Upgrade musl first (overrides the pin), then add tools. Do not apk add
-# python3 or openssl — both are already in the image and conflict.
-RUN apk add --no-cache --upgrade musl musl-utils \
+# 17.0.0 pins musl=1.2.5-r10 and libcrypto3/libssl3=3.5.1 in /etc/apk/world.
+# Upgrade those first so musl-dev and the openssl CLI can install from current Alpine.
+# Do not apk add python3 — already in the image.
+RUN apk add --no-cache --upgrade musl musl-utils libcrypto3 libssl3 \
     && apk add --no-cache \
-        gcc make musl-dev wget \
+        gcc make musl-dev wget openssl \
         nmap psmisc iproute2 curl unzip bluez libfaketime
 
 # Download diyhue and unzip it
