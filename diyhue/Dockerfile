@@ -52,8 +52,6 @@ RUN sed -i \
         -e "s/'-accept', '2100'/'-accept', '0.0.0.0:2100'/" \
         -e "s/'-cipher', 'PSK-AES128-GCM-SHA256', '-dtls',/'-cipher', 'PSK-AES128-GCM-SHA256:@SECLEVEL=0', '-dtls1_2',/" \
         /opt/hue-emulator/services/entertainment.py
-# 2.0.32+ hid FPS behind debug; restore INFO so HA logs match 2.0.31.
-RUN python3 -c "from pathlib import Path; p=Path('/opt/hue-emulator/services/entertainment.py'); t=p.read_text(); t=t.replace('logging.debug(\"Entertainment FPS:','logging.info(\"Entertainment FPS:'); t=t.replace('                    if logManager.logger.logLevel <= _logging.DEBUG:\n                        fps_frame_count += 1','                    fps_frame_count += 1'); p.write_text(t)"
 
 RUN curl -sL -o diyHueUI.zip https://github.com/diyhue/diyHueUI/releases/download/${DIYHUE_UI_VERSION}/DiyHueUI-release.zip
 RUN mkdir /diyhueUI

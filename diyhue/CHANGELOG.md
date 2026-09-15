@@ -2,10 +2,15 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.43 - 15.9.2026]
+### fix
+    - startup: remove broken FPS sed that caused `IndentationError` in `entertainment.py`
+
 ## [2.0.42 - 15.9.2026]
 ### fix
     - Entertainment: pin Hue cipher `PSK-AES128-GCM-SHA256:@SECLEVEL=0` and bind DTLS on `0.0.0.0:2100` (OpenSSL 3)
-    - restore `Entertainment FPS` at INFO so it shows without debug
+### known
+    - does not start (`IndentationError`); use 2.0.43
 
 ## [2.0.41 - 13.9.2026]
 ### fix
