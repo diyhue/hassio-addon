@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.42 - 15.9.2026]
+### fix
+    - Entertainment: pin Hue cipher `PSK-AES128-GCM-SHA256:@SECLEVEL=0` and bind DTLS on `0.0.0.0:2100` (OpenSSL 3)
+    - restore `Entertainment FPS` at INFO so it shows without debug
+
 ## [2.0.41 - 13.9.2026]
 ### fix
     - Entertainment/Ambilight: OpenSSL 3 DTLS 1.2 PSK (`-dtls1_2`, `PSK:@SECLEVEL=0`)
