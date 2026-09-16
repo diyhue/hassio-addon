@@ -52,6 +52,8 @@ RUN sed -i \
         -e "s/'-accept', '2100'/'-accept', '0.0.0.0:2100'/" \
         -e "s/'-cipher', 'PSK-AES128-GCM-SHA256', '-dtls',/'-cipher', 'PSK-AES128-GCM-SHA256:@SECLEVEL=0', '-dtls1_2',/" \
         /opt/hue-emulator/services/entertainment.py
+# Overlay master entertainment.py (DTLS diagnostics at INFO). Do not sed this file further.
+COPY entertainment.py /opt/hue-emulator/services/entertainment.py
 
 RUN curl -sL -o diyHueUI.zip https://github.com/diyhue/diyHueUI/releases/download/${DIYHUE_UI_VERSION}/DiyHueUI-release.zip
 RUN mkdir /diyhueUI

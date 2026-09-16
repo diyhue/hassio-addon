@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.44 - 16.9.2026]
+### info
+    - Entertainment: INFO diagnostics for OpenSSL DTLS (startup, UDP :2100, wait for first decrypted byte, HueStream found). PSK is not logged.
+
 ## [2.0.43 - 15.9.2026]
 ### fix
     - startup: remove broken FPS sed that caused `IndentationError` in `entertainment.py`
