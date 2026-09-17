@@ -11,7 +11,7 @@ ENV BUILD_ARCHI=${BUILD_ARCH}
 # Other settings
 ENV LANG=C.UTF-8
 ENV DIYHUE_VERSION=master
-ENV DIYHUE_COMMIT=ebd0eaf493e1054515a5d996bcb3fea36a154c0f
+ENV DIYHUE_COMMIT=354e7403ef07340241f42f2cb0dd66ba4e3d7f1f
 ENV DIYHUE_UI_VERSION=v2.0.3
 ENV WORKING_DIR=/opt/hue-emulator
 
@@ -44,16 +44,6 @@ RUN cp -r /diyHue-${DIYHUE_COMMIT}/BridgeEmulator/logManager /opt/hue-emulator/
 RUN cp -r /diyHue-${DIYHUE_COMMIT}/BridgeEmulator/HueEmulator3.py /opt/hue-emulator/
 RUN cp -r /diyHue-${DIYHUE_COMMIT}/BridgeEmulator/githubInstall.sh /opt/hue-emulator/
 RUN cp -r /diyHue-${DIYHUE_COMMIT}/BridgeEmulator/genCert.sh /diyHue-${DIYHUE_COMMIT}/BridgeEmulator/openssl.conf	/opt/hue-emulator/
-
-# OpenSSL 3.x (Alpine 3.22) does not offer Hue's DTLS 1.2 PSK suite with plain -dtls.
-# Handshake then stalls; no FPS logs; the TV drops the stream after a few seconds.
-RUN sed -i \
-        -e "s/'s_server', '-dtls',/'s_server', '-dtls1_2', '-cipher', 'PSK-AES128-GCM-SHA256:@SECLEVEL=0',/" \
-        -e "s/'-accept', '2100'/'-accept', '0.0.0.0:2100'/" \
-        -e "s/'-cipher', 'PSK-AES128-GCM-SHA256', '-dtls',/'-cipher', 'PSK-AES128-GCM-SHA256:@SECLEVEL=0', '-dtls1_2',/" \
-        /opt/hue-emulator/services/entertainment.py
-# Overlay master entertainment.py (DTLS diagnostics at INFO). Do not sed this file further.
-COPY entertainment.py /opt/hue-emulator/services/entertainment.py
 
 RUN curl -sL -o diyHueUI.zip https://github.com/diyhue/diyHueUI/releases/download/${DIYHUE_UI_VERSION}/DiyHueUI-release.zip
 RUN mkdir /diyhueUI
