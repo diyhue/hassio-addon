@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.46 - 3.10.2026]
+### fix
+    - bridge software version after Philips relabelled the Bridge to 6.1 (`6.1.1978418030`)
+    - `versionName[:4]` stored `apiversion` `6.1..0`, so CLIP v2 reported `6.1..1978418030` and Home Assistant could not switch grouped lights
+    - update diyHue to `cfb2ad5`
+
 ## [2.0.45 - 16.9.2026]
 ### fix
     - Entertainment: start `openssl s_server` immediately (2.0.44 bound UDP :2100 ~580ms after `stream active=True`)
